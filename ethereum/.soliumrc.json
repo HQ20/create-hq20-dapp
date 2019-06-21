@@ -1,0 +1,57 @@
+{
+    "extends": "solium:all",
+    "plugins": [
+        "security"
+    ],
+    "rules": {
+        "imports-on-top": "warning",
+        "variable-declarations": "warning",
+        "array-declarations": "warning",
+        "operator-whitespace": "warning",
+        "conditionals-whitespace": "warning",
+        "comma-whitespace": "warning",
+        "semicolon-whitespace": "warning",
+        "function-whitespace": "warning",
+        "lbrace": "warning",
+        "mixedcase": "error",
+        "camelcase": "error",
+        "uppercase": "off",
+        "no-empty-blocks": "warning",
+        "no-unused-vars": "warning",
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "blank-lines": "warning",
+        "indentation": [
+            "error",
+            4
+        ],
+        "arg-overflow": [
+            "warning",
+            3
+        ],
+        "whitespace": "warning",
+        "deprecated-suicide": "warning",
+        "pragma-on-top": "warning",
+        "function-order": "warning",
+        "emit": "warning",
+        "no-constant": [
+            "error"
+        ],
+        "value-in-payable": "warning",
+        "no-experimental": "warning",
+        "max-len": [
+            "error",
+            126
+        ],
+        "error-reason": "off",
+        "visibility-first": "error",
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "constructor": "warning",
+        "no-trailing-whitespace": "warning"
+    }
+}
