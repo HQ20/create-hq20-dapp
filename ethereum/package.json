@@ -27,7 +27,7 @@
         "lint": "npm run lint:sol && npm run lint:js",
         "security": "docker run --rm --memory=3g -v $(pwd):/tmp -w \"/tmp/\" mythril/myth --truffle",
         "coverage": "solidity-coverage",
-        "coverage:ci": "solidity-coverage && cat coverage/lcov.info | coveralls",
+        "coverage:ci": "solidity-coverage && cat coverage/lcov.info",
         "docs": "soldoc docs/ contracts"
     },
     "dependencies": {
@@ -35,6 +35,7 @@
     },
     "devDependencies": {
         "bignumber.js": "9.0.0",
+        "chai": "^4.2.0",
         "eslint": "5.16.0",
         "eslint-config-airbnb": "17.1.0",
         "eslint-plugin-import": "2.17.3",
@@ -42,9 +43,10 @@
         "eslint-plugin-react": "7.13.0",
         "eth-gas-reporter": "0.2.0",
         "ethlint": "1.2.1",
+        "ganache-cli": "6.4.4",
+        "soldoc": "0.1.0-beta.3",
         "solidity-coverage": "0.6.0-beta.5",
         "truffle": "5.0.0",
-        "truffle-hdwallet-provider": "1.0.10",
-        "ganache-cli": "6.4.4"
+        "truffle-hdwallet-provider": "1.0.10"
     }
 }
