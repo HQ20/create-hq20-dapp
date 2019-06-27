@@ -1,0 +1,29 @@
+dist: xenial
+
+language: node_js
+
+services:
+    - docker
+
+env:
+    - DOCKER_COMPOSE_VERSION=1.4.2
+
+node_js:
+    - "lts/dubnium"
+
+before_install:
+    - docker pull trufflesuite/ganache-cli:v6.4.3
+    - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3
+
+install:
+    - npm install
+    - (cd ethereum && npm install)
+    - (cd client && npm install)
+
+before_script:
+    - (cd ethereum && touch .secret && npm run deploy:ganache)
+    - (cd client && npm run link-contracts)
+
+script:
+    - npm run coverage
+    - npm run lint
