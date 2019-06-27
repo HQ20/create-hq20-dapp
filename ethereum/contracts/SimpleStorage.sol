@@ -2,6 +2,7 @@ pragma solidity ^0.5.0;
 
 import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 
+
 /**
  * @title Simple Storage
  * @dev A simple way to save a number.
