@@ -1,4 +1,7 @@
+const chai = require('chai');
+
 const SimpleStorage = artifacts.require('./SimpleStorage.sol');
+chai.should();
 
 /** @test {SimpleStorage} contract */
 contract('SimpleStorage', (accounts) => {
@@ -15,6 +18,6 @@ contract('SimpleStorage', (accounts) => {
         // Get stored value
         const storedData = await simpleStorageInstance.get();
 
-        assert.equal(storedData, 89, 'The value 89 was not stored.');
+        (storedData.toString()).should.be.equal('89');
     });
 });
