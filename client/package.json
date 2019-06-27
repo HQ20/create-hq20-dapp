@@ -10,7 +10,7 @@
         "test:ci": "CI=true react-scripts test --env=jsdom",
         "lint": "tslint -c tslint.json 'src/**/*.ts'",
         "coverage": "react-scripts test --env=jsdom --coverage",
-        "coverage:ci": "CI=true react-scripts test --env=jsdom --coverage && cat coverage/lcov.info | coveralls",
+        "coverage:ci": "CI=true react-scripts test --env=jsdom --coverage && cat coverage/lcov.info",
         "debug:chrome": "google-chrome --remote-debugging-port=9222",
         "docs": "typedoc --out docs ./src",
         "link-contracts": "run-script-os",
