@@ -1,5 +1,23 @@
 {
-  "extends": [
-    "config:base"
-  ]
+    "extends": [
+        "config:base"
+    ],
+    "assignees": [
+        "obernardovieira"
+    ],
+    "schedule": [
+        "before 5pm on monday"
+    ],
+    "labels": [
+        "renovate",
+        "dependencies"
+    ],
+    "packageRules": [
+        {
+            "packageNames": [
+                "jest"
+            ],
+            "enable": false
+        }
+    ]
 }
