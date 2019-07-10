@@ -21,9 +21,9 @@ install:
     - (cd client && npm install)
 
 before_script:
-    - (cd ethereum && touch .secret && npm run deploy:ganache)
+    - (cd ethereum && npm run deploy:ganache)
     - (cd client && npm run link-contracts)
 
 script:
-    - npm run coverage
+    - npm run test:ci
     - npm run lint

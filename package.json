@@ -3,8 +3,7 @@
     "version": "0.1.0",
     "description": "simple-ethereum-ts-react-dapp",
     "scripts": {
-        "test": "lerna run test:ci",
-        "coverage": "lerna run coverage:ci",
+        "test:ci": "lerna run test:ci",
         "lint": "lerna run lint"
     },
     "repository": {
