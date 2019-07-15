@@ -11188,10 +11188,10 @@ typedoc@0.14.2:
     typedoc-default-themes "^0.5.0"
     typescript "3.2.x"
 
-typescript-tslint-plugin@0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/typescript-tslint-plugin/-/typescript-tslint-plugin-0.5.3.tgz#555d1d31c4a8504cdde60e616d1c41da1da7df4e"
-  integrity sha512-mL/11ve0XORmCVnOFsmgw1E/r6Ic/NBaat0ZtmTjLTYopo3noGnW00UJzl1Vf7zxe3YckLHH1irTckgAa+XRrA==
+typescript-tslint-plugin@0.5.4:
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/typescript-tslint-plugin/-/typescript-tslint-plugin-0.5.4.tgz#febe0cca1fe65133f4f688841eba68262a1d55a5"
+  integrity sha512-CQEfGC+p0SoBARI4N2LrGsWJsp4/OE+uKZ68xsWYKHWqMFq4DFQHqOVlK0deEricSN01NmDTqjap63Pw/DHieg==
   dependencies:
     minimatch "^3.0.4"
     mock-require "^3.0.2"
