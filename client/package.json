@@ -35,7 +35,7 @@
     "devDependencies": {
         "@types/enzyme": "3.10.2",
         "@types/enzyme-adapter-react-16": "1.0.5",
-        "coveralls": "3.0.4",
+        "coveralls": "3.0.5",
         "delay": "4.3.0",
         "enzyme": "3.10.0",
         "enzyme-adapter-react-16": "1.14.0",
