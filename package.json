@@ -18,6 +18,6 @@
     },
     "homepage": "https://github.com/HQ20/simple-ethereum-ts-react-dapp#readme",
     "dependencies": {
-        "lerna": "3.13.4"
+        "lerna": "3.15.0"
     }
 }
