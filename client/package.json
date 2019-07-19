@@ -44,7 +44,7 @@
         "eslint-plugin-import": "2.18.0",
         "eslint-plugin-jsx-a11y": "6.2.3",
         "eslint-plugin-react": "7.14.2",
-        "jest": "24.7.1",
+        "jest": "24.8.0",
         "portscanner": "2.2.0",
         "run-script-os": "1.0.7",
         "tslint": "5.18.0",
