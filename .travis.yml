@@ -25,5 +25,6 @@ before_script:
     - (cd client && npm run link-contracts)
 
 script:
-    - npm run test:ci
+    - npm run test
+    - npm run coverage
     - npm run lint

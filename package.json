@@ -1,22 +1,23 @@
 {
-    "name": "simple-ethereum-ts-react-dapp",
+    "name": "ethereum-ts-react-dapp",
     "version": "0.1.0",
-    "description": "simple-ethereum-ts-react-dapp",
+    "description": "ethereum-ts-react-dapp",
     "scripts": {
-        "test:ci": "lerna run test:ci",
+        "test": "lerna run test",
+        "coverage": "lerna run coverage",
         "lint": "lerna run lint"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/HQ20/simple-ethereum-ts-react-dapp.git"
+        "url": "git+https://github.com/HQ20/ethereum-ts-react-dapp.git"
     },
     "keywords": [],
     "author": "",
     "license": "Apache-2.0",
     "bugs": {
-        "url": "https://github.com/HQ20/simple-ethereum-ts-react-dapp/issues"
+        "url": "https://github.com/HQ20/ethereum-ts-react-dapp/issues"
     },
-    "homepage": "https://github.com/HQ20/simple-ethereum-ts-react-dapp#readme",
+    "homepage": "https://github.com/HQ20/ethereum-ts-react-dapp#readme",
     "dependencies": {
         "lerna": "3.15.0"
     }
