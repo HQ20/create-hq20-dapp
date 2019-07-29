@@ -6,13 +6,9 @@ import Main from './Pages/Main/Main';
 class App extends Component {
     public render() {
         return (
-            <div>
-                <Router>
-                    <div>
-                        <Route path="/" exact={true} component={Main} />
-                    </div>
-                </Router>
-            </div>
+            <Router>
+                <Route path="/" exact={true} component={Main} />
+            </Router>
         );
     }
 }

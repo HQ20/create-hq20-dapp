@@ -3,7 +3,7 @@ import truffleContract from 'truffle-contract';
 import SimpleStorageContract from '../../contracts/SimpleStorage.json';
 import getWeb3 from '../../utils/getWeb3';
 
-interface MainState {
+interface IMainState {
     storageValue: number;
     web3: any;
     accounts: string[];
@@ -12,7 +12,7 @@ interface MainState {
 /**
  * This is App.
  */
-class Main extends Component<{}, MainState> {
+class Main extends Component<{}, IMainState> {
     /**
      * @ignore
      */
@@ -26,17 +26,17 @@ class Main extends Component<{}, MainState> {
          * @property {object} state.contract - this is the contract object
          */
         this.state = {
-            storageValue: 0,
-            web3: undefined as any,
             accounts: undefined as any,
             contract: undefined as any,
+            storageValue: 0,
+            web3: undefined as any,
         };
     }
 
     /**
      * @ignore
      */
-    async componentDidMount() {
+    public async componentDidMount() {
         try {
             // Get network provider and web3 instance.
             const web3 = await getWeb3() as any;
@@ -62,7 +62,7 @@ class Main extends Component<{}, MainState> {
     /**
      * this is an entry method to load info.
      */
-    async runExample() {
+    public async runExample() {
         const { accounts, contract } = this.state;
 
         // Stores a given value, 5 by default.
@@ -78,7 +78,7 @@ class Main extends Component<{}, MainState> {
     /**
      * @ignore
      */
-    render() {
+    public render() {
         const { web3, storageValue } = this.state;
         if (!web3) {
             return <div>Loading Web3, accounts, and contract...</div>;
