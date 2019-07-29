@@ -6,6 +6,9 @@ update_configs:
     update_schedule: "weekly"
     default_assignees:
       - "obernardovieira"
+    allowed_updates:
+      - match:
+        dependency_name: "lerna"
 
   - package_manager: "javascript"
     directory: "/client"
