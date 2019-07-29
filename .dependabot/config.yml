@@ -8,7 +8,7 @@ update_configs:
       - "obernardovieira"
     allowed_updates:
       - match:
-        dependency_name: "lerna"
+          dependency_name: "lerna"
 
   - package_manager: "javascript"
     directory: "/client"
