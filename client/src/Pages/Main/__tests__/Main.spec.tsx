@@ -5,15 +5,10 @@ import Adapter from 'enzyme-adapter-react-16';
 import * as React from 'react';
 
 // eslint-disable-next-line no-unused-vars
-import getWeb3 from '../../../utils/getWeb3';
 import Main from '../Main';
 
 
 configure({ adapter: new Adapter() });
-// the following line will instruct Jest
-// to use the mock class instead of the real one
-jest.mock('../../../utils/getWeb3');
-// some basic tests
 /**
  * Define class interface
  */
@@ -32,7 +27,7 @@ describe('Basic tests to Main Component', () => {
 
     test('web3 gets defined', async () => {
         let leftTries = 5;
-        // wait until list actions is fulfiled
+        // wait until web3 is defined
         do {
             // eslint-disable-next-line no-await-in-loop
             await delay(3000);
@@ -46,7 +41,7 @@ describe('Basic tests to Main Component', () => {
         let leftTries = 5;
         // in order up update the state we need to mount again
         mainWrapper = mount(<Main />);
-        // wait until list actions is fulfiled
+        // wait until storage value as the correct value
         do {
             // eslint-disable-next-line no-await-in-loop
             await delay(3000);

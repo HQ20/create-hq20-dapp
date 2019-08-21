@@ -1,10 +1,12 @@
+import { fromConnection, fromInjected } from '@openzeppelin/network';
 import React, { Component } from 'react';
 import truffleContract from 'truffle-contract';
 import SimpleStorageContract from '../../contracts/SimpleStorage.json';
-import getWeb3 from '../../utils/getWeb3';
 
 interface IMainState {
     storageValue: number;
+    inputStorageValue: string;
+    loggedIn: boolean;
     web3: any;
     accounts: string[];
     contract: any;
@@ -24,10 +26,14 @@ class Main extends Component<{}, IMainState> {
          * @property {object} state.web3 - this is the web3 object
          * @property {string[]} state.accounts - this is an array of accounts
          * @property {object} state.contract - this is the contract object
+         * @property {object} state.inputStorageValue - variable to controled input
+         * @property {object} state.loggedIn - save user's state
          */
         this.state = {
             accounts: undefined as any,
             contract: undefined as any,
+            inputStorageValue: '',
+            loggedIn: false,
             storageValue: 0,
             web3: undefined as any,
         };
@@ -37,49 +43,83 @@ class Main extends Component<{}, IMainState> {
      * @ignore
      */
     public async componentDidMount() {
-        try {
-            // Get network provider and web3 instance.
-            const web3 = await getWeb3() as any;
+        const local = await fromConnection('http://127.0.0.1:8545');
 
-            // Use web3 to get the user's accounts.
-            const accounts = await web3.eth.getAccounts();
+        // Get the contract instance.
+        const Contract = truffleContract(SimpleStorageContract);
+        Contract.setProvider(local.lib.currentProvider);
+        const instance = await Contract.deployed();
 
-            // Get the contract instance.
-            const Contract = truffleContract(SimpleStorageContract);
-            Contract.setProvider(web3.currentProvider);
-            const instance = await Contract.deployed();
+        const storageValue = (await instance.get()).toNumber();
 
-            // Set web3, accounts, and contract to the state, and then proceed with an
-            // example of interacting with the contract's methods.
-            this.setState({ web3, accounts, contract: instance }, this.runExample);
-        } catch (error) {
-            // Catch any errors for any of the above operations.
-            console.log('Failed to load web3, accounts, or contract. Check console for details.');
-            console.log(error);
-        }
+        // Set web3, accounts, and contract to the state, and then proceed with an
+        // example of interacting with the contract's methods.
+        this.setState({ web3: local.lib, contract: instance, storageValue });
     }
 
     /**
-     * this is an entry method to load info.
+     * handle input changes.
      */
-    public async runExample() {
-        const { accounts, contract } = this.state;
+    public handleChangeInputStorageValue = (event: any) => {
+        this.setState({ inputStorageValue: event.target.value });
+    }
 
-        // Stores a given value, 5 by default.
-        await contract.set(5, { from: accounts[0] });
+    /**
+     * submit input changes
+     */
+    public handleSubmitInputStorageValue = (event: any) => {
+        new Promise<
+            { loggedIn: boolean, accounts: string[], contract: any, web3: any }
+        >(async (resolve: any, reject: any) => {
+            let web3;
+            let accounts = this.state.accounts;
+            let contract = this.state.contract;
+            const loggedIn = this.state.loggedIn;
 
-        // Get the value from the contract to prove it worked.
-        const response = await contract.get();
+            if (!loggedIn) {
+                try {
+                    const injected = await fromInjected();
+                    // Get network provider and web3 instance.
 
-        // Update state with the result.
-        this.setState({ storageValue: response.toNumber() });
+                    web3 = injected.lib;
+                    // Use web3 to get the user's accounts.
+                    accounts = await web3.eth.getAccounts();
+
+                    // Get the contract instance.
+                    const Contract = truffleContract(SimpleStorageContract);
+                    Contract.setProvider(web3.currentProvider);
+                    contract = await Contract.deployed();
+                } catch (error) {
+                    // Catch any errors for any of the above operations.
+                    console.log('Failed to load web3, accounts, or contract. Check console for details.');
+                    console.log(error);
+                }
+            }
+            // Stores a given value, 5 by default.
+            await contract.set(this.state.inputStorageValue, { from: accounts[0] });
+            //
+            resolve({ loggedIn, accounts, contract, web3 });
+        }).then(({ loggedIn, accounts, contract, web3 }) => {
+            // Update state with the result.
+            if (!loggedIn) {
+                this.setState({
+                    accounts,
+                    contract,
+                    inputStorageValue: '',
+                    loggedIn: true,
+                    storageValue: parseInt(this.state.inputStorageValue, 10),
+                    web3,
+                });
+            }
+        });
+        event.preventDefault();
     }
 
     /**
      * @ignore
      */
     public render() {
-        const { web3, storageValue } = this.state;
+        const { web3, storageValue, inputStorageValue } = this.state;
         if (!web3) {
             return <div>Loading Web3, accounts, and contract...</div>;
         }
@@ -104,6 +144,10 @@ class Main extends Component<{}, IMainState> {
                     {' '}
                     {storageValue}
                 </div>
+                <form onSubmit={this.handleSubmitInputStorageValue}>
+                    <input type="text" value={inputStorageValue} onChange={this.handleChangeInputStorageValue} />
+                    <input type="submit" />
+                </form>
             </div>
         );
     }
