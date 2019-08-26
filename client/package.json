@@ -47,7 +47,7 @@
         "eslint-plugin-react": "7.14.3",
         "jest": "24.7.1",
         "run-script-os": "1.0.7",
-        "tslint": "5.18.0",
+        "tslint": "5.19.0",
         "tslint-react": "4.0.0",
         "typedoc": "0.15.0",
         "typescript-tslint-plugin": "0.5.4"
