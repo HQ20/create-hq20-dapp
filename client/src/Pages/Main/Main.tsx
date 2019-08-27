@@ -72,9 +72,8 @@ class Main extends Component<{}, IMainState> {
             { loggedIn: boolean, accounts: string[], contract: any, web3: any }
         >(async (resolve: any, reject: any) => {
             let web3;
-            let accounts = this.state.accounts;
-            let contract = this.state.contract;
-            const loggedIn = this.state.loggedIn;
+            let { accounts, contract } = this.state;
+            const { loggedIn, inputStorageValue } = this.state;
 
             if (!loggedIn) {
                 try {
@@ -96,18 +95,19 @@ class Main extends Component<{}, IMainState> {
                 }
             }
             // Stores a given value, 5 by default.
-            await contract.set(this.state.inputStorageValue, { from: accounts[0] });
+            await contract.set(inputStorageValue, { from: accounts[0] });
             //
             resolve({ loggedIn, accounts, contract, web3 });
         }).then(({ loggedIn, accounts, contract, web3 }) => {
             // Update state with the result.
+            const { inputStorageValue } = this.state;
             if (!loggedIn) {
                 this.setState({
                     accounts,
                     contract,
                     inputStorageValue: '',
                     loggedIn: true,
-                    storageValue: parseInt(this.state.inputStorageValue, 10),
+                    storageValue: parseInt(inputStorageValue, 10),
                     web3,
                 });
             }
