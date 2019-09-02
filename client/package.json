@@ -45,7 +45,7 @@
         "eslint-plugin-import": "2.18.2",
         "eslint-plugin-jsx-a11y": "6.2.3",
         "eslint-plugin-react": "7.14.3",
-        "jest": "24.7.1",
+        "jest": "24.9.0",
         "run-script-os": "1.0.7",
         "tslint": "5.19.0",
         "tslint-react": "4.0.0",
