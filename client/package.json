@@ -24,7 +24,7 @@
         "@types/react-dom": "16.9.0",
         "@types/react-router-dom": "5.1.0",
         "bignumber.js": "9.0.0",
-        "react": "16.9.0",
+        "react": "16.10.1",
         "react-dom": "16.10.1",
         "react-router-dom": "5.1.2",
         "react-scripts": "3.0.1",
