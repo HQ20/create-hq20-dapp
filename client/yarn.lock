@@ -1250,10 +1250,10 @@
     web3-eth-abi "^1.2.1"
     web3-utils "^1.2.1"
 
-"@openzeppelin/network@0.2.9":
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/@openzeppelin/network/-/network-0.2.9.tgz#dd03185ba489e1abbb2706cfe10a2e6e3dfcbbc1"
-  integrity sha512-l+/8HD8FEsfavbPqTskIb50jdIFpw/mpL05IxCBRmlpZYjcbUmCWZmUdh6LjY4HRV9I6RWtymA2TwguSFnhD8Q==
+"@openzeppelin/network@0.2.10":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/network/-/network-0.2.10.tgz#d7399e98ccc44a8e792df1e89bd7e3bf3ad73181"
+  integrity sha512-s/eua5UcpwHcC6fVYyu+S5JGL+7+JKERbXV9rBRau6quKfry2nvkxQ6tupKTp0DVdmtRfC3Gg1/QLerMVBiGAA==
   dependencies:
     "@openzeppelin/gsn-provider" "^0.1.5"
     ethereumjs-wallet "^0.6.3"
