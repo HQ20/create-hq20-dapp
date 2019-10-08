@@ -18,7 +18,7 @@
         "link-contracts:win32": "cd src && mklink \\D contracts ..\\..\\ethereum\\build\\contracts"
     },
     "dependencies": {
-        "@openzeppelin/network": "0.2.9",
+        "@openzeppelin/network": "0.2.10",
         "@types/node": "12.7.11",
         "@types/react": "16.9.3",
         "@types/react-dom": "16.9.0",
