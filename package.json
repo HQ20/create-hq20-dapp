@@ -19,6 +19,6 @@
     },
     "homepage": "https://github.com/HQ20/ethereum-ts-react-dapp#readme",
     "dependencies": {
-        "lerna": "3.16.4"
+        "lerna": "3.18.1"
     }
 }
