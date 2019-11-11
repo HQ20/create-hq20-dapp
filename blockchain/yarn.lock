@@ -7999,10 +7999,10 @@ truffle-provider@^0.1.12:
     truffle-interface-adapter "^0.2.5"
     web3 "1.2.1"
 
-truffle@5.0.41:
-  version "5.0.41"
-  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.0.41.tgz#a7ef0b6e97d3a22aaf5da2cc4ef6a13f39596ffb"
-  integrity sha512-vQm7OHRN8qh4Te3QZ9A74JsDoZfcYoJLuI1FrcLpJoicdTrzCZU4UXGIYFUIZ+UmOTlMS07lUufxDSraSHxpdg==
+truffle@5.0.44:
+  version "5.0.44"
+  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.0.44.tgz#791df87992e32cf87840d3a58450e9e0331ccc0c"
+  integrity sha512-nbJAu5P76AU7wZxbQl/yPhf8g8gXMkVQtWZGRec5lz6w4fc4cOLrbAD6G6IJYVJqK3s8FTIjox0YKsI/Az/O6w==
   dependencies:
     app-module-path "^2.2.0"
     mocha "5.2.0"
