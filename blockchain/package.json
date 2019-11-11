@@ -31,7 +31,7 @@
         "docs": "soldoc docs/ contracts"
     },
     "dependencies": {
-        "@openzeppelin/contracts": "2.3.0",
+        "@openzeppelin/contracts": "2.4.0",
         "@openzeppelin/cli": "2.5.3",
         "@openzeppelin/contracts-ethereum-package": "2.3.0",
         "@openzeppelin/upgrades": "2.5.3"
