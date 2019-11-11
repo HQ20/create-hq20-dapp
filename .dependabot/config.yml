@@ -2,19 +2,6 @@
 version: 1
 update_configs:
   - package_manager: "javascript"
-    directory: "/"
-    update_schedule: "weekly"
-    default_assignees:
-      - "obernardovieira"
-    allowed_updates:
-      - match:
-          dependency_name: "lerna"
-    automerged_updates:
-      - match:
-          dependency_type: "all"
-          update_type: "all"
-
-  - package_manager: "javascript"
     directory: "/client"
     update_schedule: "daily"
     default_assignees:
@@ -25,6 +12,19 @@ update_configs:
           dependency_name: "web3"
           dependency_name: "typescript"
           dependency_name: "react-scripts"
+    automerged_updates:
+      - match:
+          dependency_type: "development"
+          update_type: "all"
+      - match:
+          dependency_type: "production"
+          update_type: "semver:patch"
+
+  - package_manager: "javascript"
+    directory: "/blockchain"
+    update_schedule: "daily"
+    default_assignees:
+      - "obernardovieira"
     automerged_updates:
       - match:
           dependency_type: "development"

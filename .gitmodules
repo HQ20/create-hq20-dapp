@@ -1,3 +1,0 @@
-[submodule "ethereum"]
-	path = ethereum
-	url = https://github.com/HQ20/simple-ethereum-dapp.git

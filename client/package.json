@@ -1,6 +1,6 @@
 {
     "name": "client",
-    "version": "0.1.0",
+    "version": "0.0.1",
     "private": true,
     "scripts": {
         "start": "react-scripts start",
@@ -14,13 +14,13 @@
         "debug:chrome": "google-chrome --remote-debugging-port=9222",
         "docs": "typedoc --out docs ./src",
         "link-contracts": "run-script-os",
-        "link-contracts:linux:darwin": "cd src && ln -s ../../ethereum/build/contracts contracts",
-        "link-contracts:win32": "cd src && mklink \\D contracts ..\\..\\ethereum\\build\\contracts"
+        "link-contracts:linux:darwin": "cd src && ln -s ../../blockchain/build/contracts contracts",
+        "link-contracts:win32": "cd src && mklink \\D contracts ..\\..\\blockchain\\build\\contracts"
     },
     "dependencies": {
         "@openzeppelin/network": "0.2.10",
-        "@types/react": "16.9.9",
         "@types/node": "12.11.1",
+        "@types/react": "16.9.9",
         "@types/react-dom": "16.9.0",
         "@types/react-router-dom": "5.1.0",
         "bignumber.js": "9.0.0",
@@ -33,9 +33,10 @@
         "web3": "1.2.1"
     },
     "devDependencies": {
-        "@types/jest": "24.0.19",
         "@types/enzyme": "3.10.3",
         "@types/enzyme-adapter-react-16": "1.0.5",
+        "@types/jest": "24.0.19",
+        "babel-plugin-root-import": "^6.4.1",
         "coveralls": "3.0.6",
         "delay": "4.3.0",
         "enzyme": "3.10.0",
