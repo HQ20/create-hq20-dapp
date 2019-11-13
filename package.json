@@ -1,7 +1,7 @@
 {
     "private": true,
     "workspaces": [
-        "blockchain",
-        "webui"
+        "workspace-blockchain",
+        "workspace-webui"
     ]
 }
