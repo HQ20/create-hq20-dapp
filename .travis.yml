@@ -17,11 +17,11 @@ before_install:
 
 install:
     - npm install
-    - (cd ethereum && npm install)
+    - (cd blockchain && npm install)
     - (cd client && npm install)
 
 before_script:
-    - (cd ethereum && npm run deploy:ganache)
+    - (cd blockchain && npm run deploy:ganache)
     - (cd client && npm run link-contracts)
 
 script:
