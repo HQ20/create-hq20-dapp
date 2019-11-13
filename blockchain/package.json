@@ -28,28 +28,33 @@
         "lint:js": "eslint *.js .",
         "lint": "npm run lint:sol && npm run lint:js",
         "security": "docker run --rm --memory=3g -v $(pwd):/tmp -w \"/tmp/\" mythril/myth --truffle",
-        "docs": "soldoc docs/ contracts"
+        "docs": "soldoc docs/ contracts",
+        "generate-ts": "typechain --target truffle --outDir app/contracts './build/contracts/*.json'"
     },
     "dependencies": {
-        "@openzeppelin/contracts": "2.3.0",
-        "@openzeppelin/cli": "2.5.3",
+        "@openzeppelin/cli": "2.6.0",
+        "@openzeppelin/contracts": "2.4.0",
         "@openzeppelin/contracts-ethereum-package": "2.3.0",
-        "@openzeppelin/upgrades": "2.5.3"
+        "@openzeppelin/upgrades": "2.6.0",
+        "cross-env": "5.0.5"
     },
     "devDependencies": {
         "bignumber.js": "9.0.0",
         "chai": "4.2.0",
-        "eslint": "6.5.1",
-        "eslint-config-airbnb": "17.1.1",
+        "eslint": "6.6.0",
+        "eslint-config-airbnb": "18.0.1",
         "eslint-plugin-import": "2.18.2",
         "eslint-plugin-jsx-a11y": "6.2.3",
         "eslint-plugin-react": "7.16.0",
         "eth-gas-reporter": "0.2.12",
         "ethlint": "1.2.5",
         "ganache-cli": "6.7.0",
-        "soldoc": "0.1.1",
+        "soldoc": "0.1.2-beta.0",
         "solidity-coverage": "0.6.7",
-        "truffle": "5.0.41",
-        "truffle-hdwallet-provider": "1.0.17"
+        "truffle": "5.1.0",
+        "truffle-hdwallet-provider": "1.0.17",
+        "truffle-typings": "1.0.8",
+        "typechain": "1.0.3",
+        "typechain-target-truffle": "1.0.0"
     }
 }
