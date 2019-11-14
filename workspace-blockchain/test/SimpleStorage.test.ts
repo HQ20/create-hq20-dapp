@@ -1,5 +1,5 @@
-import { SimpleStorageInstance } from "../types/truffle-contracts";
 import * as chai from 'chai';
+import { SimpleStorageInstance } from '../types/truffle-contracts';
 
 
 const SimpleStorage = artifacts.require('./SimpleStorage.sol') as Truffle.Contract<SimpleStorageInstance>;

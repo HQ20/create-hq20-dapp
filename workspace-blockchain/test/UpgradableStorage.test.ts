@@ -1,16 +1,16 @@
-import { UpgradableStorageInstance } from '../types/truffle-contracts';
 import * as chai from 'chai';
+import { UpgradableStorageInstance } from '../types/truffle-contracts';
 
 const UpgradableStorage = artifacts.require('UpgradableStorage') as Truffle.Contract<UpgradableStorageInstance>;
 chai.should();
 
 /** @test {UpgradableStorage} contract */
 contract('UpgradableStorage', (accounts) => {
-    let UpgradableStorageInstance: any;
+    let upgradableStorageInstance: any;
 
     beforeEach(async () => {
-        UpgradableStorageInstance = await UpgradableStorage.new();
-        UpgradableStorageInstance.setup(6);
+        upgradableStorageInstance = await UpgradableStorage.new();
+        upgradableStorageInstance.setup(6);
     });
 
     /**
@@ -18,13 +18,13 @@ contract('UpgradableStorage', (accounts) => {
      * @test {UpgradableStorage#set} and {UpgradableStorage#get}
      */
     it('...should store the value 89.', async () => {
-        ((await UpgradableStorageInstance.get()).toString()).should.be.equal('6');
+        ((await upgradableStorageInstance.get()).toString()).should.be.equal('6');
 
         // Set value of 89
-        await UpgradableStorageInstance.set(89, { from: accounts[0] });
+        await upgradableStorageInstance.set(89, { from: accounts[0] });
 
         // Get stored value
-        ((await UpgradableStorageInstance.get()).toString()).should.be.equal('89');
+        ((await upgradableStorageInstance.get()).toString()).should.be.equal('89');
     });
 });
 
