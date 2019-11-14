@@ -19,7 +19,7 @@
     },
     "scripts": {
         "deploy:ganache": "truffle deploy --network development",
-        "start:ganache:dev": "ganache-cli -m \"width whip dream dress captain vessel mix drive oxygen broken soap bone\" -p 8545 -i 5777",
+        "start:ganache:dev": "./scripts/local_ganache.sh",
         "test": "scripts/test.sh",
         "test:ci": "CI=true scripts/test.sh",
         "coverage": "SOLIDITY_COVERAGE=true scripts/test.sh",
@@ -37,7 +37,7 @@
         "@openzeppelin/contracts-ethereum-package": "2.3.0",
         "@openzeppelin/upgrades": "2.6.0",
         "truffle": "5.1.0",
-        "cross-env": "5.0.5"
+        "cross-env": "6.0.3"
     },
     "devDependencies": {
         "bignumber.js": "9.0.0",
@@ -47,7 +47,6 @@
         "ganache-cli": "6.7.0",
         "soldoc": "0.1.2-beta.0",
         "solidity-coverage": "0.6.7",
-        "truffle-hdwallet-provider": "1.0.17",
         "truffle-typings": "1.0.8",
         "typechain": "1.0.3",
         "typechain-target-truffle": "1.0.0",
@@ -58,6 +57,6 @@
         "ts-generator": "0.0.8",
         "ts-node": "8.5.0",
         "typescript": "3.7.2",
-        "truffle-contract": "4.0.31"
+        "@truffle/hdwallet-provider": "1.0.25"
     }
 }
