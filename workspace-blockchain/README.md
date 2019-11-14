@@ -23,7 +23,8 @@ $ yarn
 
 The package.json file contains a set of npm scripts to help on the development phase. Below is a short description for each
 * **"deploy:ganache"** deploy the contracts on development network
-* **"start:ganache:dev"** start a ganache instance, always with the same mnemonic, port and networkid
+* **"start:ganache:local"** start a ganache instance, which starts a db when first used
+* **"start:geth:local"** start a geth instance, which starts a db when first used
 * **"test"** run tests locally
 * **"test:ci"** run tests in CI system
 * **"coverage"** run coverage locally

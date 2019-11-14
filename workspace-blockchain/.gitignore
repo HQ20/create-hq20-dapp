@@ -106,5 +106,14 @@ typings/
 # the .secret
 .secret
 
-# the contracts link
-client/src/contracts
+# oz session
+.openzeppelin/.session
+
+# coverage
+.coverage_artifacts/
+.coverage_contracts/
+
+# network
+**/db/geth
+**/db/history
+**/db_ganache/
