@@ -7,7 +7,7 @@ import { SimpleStorageInstance } from 'workspace-blockchain/types/truffle-contra
 interface IMainState {
     storageValue: string;
     inputStorageValue: string;
-    userAccount: string;
+    userSigner: ethers.providers.JsonRpcSigner;
     provider: JsonRpcProvider;
     simpleStorageInstance: ethers.Contract & SimpleStorageInstance;
     miningTransaction: boolean;
@@ -25,7 +25,7 @@ class Main extends Component<{}, IMainState> {
          * @type {Object}
          * @property {string} state.storageValue - this is the value stored
          * @property {JsonRpcProvider} state.provider - this is the web3 provider
-         * @property {string} state.userAccount - this is the user account
+         * @property {ethers.providers.JsonRpcSigner} state.userSigner - this is the user account
          * @property {SimpleStorageInstance} state.simpleStorageInstance - this is the contract object
          * @property {string} state.inputStorageValue - variable to controled input
          * @property {boolean} state.miningTransaction - variable to mining message
@@ -36,7 +36,7 @@ class Main extends Component<{}, IMainState> {
             provider: undefined as any,
             simpleStorageInstance: undefined as any,
             storageValue: '',
-            userAccount: undefined as any,
+            userSigner: undefined as any,
         };
     }
 
@@ -57,12 +57,12 @@ class Main extends Component<{}, IMainState> {
             customHttpProvider,
         ) as ethers.Contract & SimpleStorageInstance;
 
-        const userAccount = (await customHttpProvider.listAccounts())[0];
+        const userSigner = customHttpProvider.getSigner(0);
         const storageValue = (await simpleStorageInstance.get()).toString();
 
         // Set provider and contract to the state, and then proceed with an
         // example of interacting with the contract's methods.
-        this.setState({ provider: customHttpProvider, simpleStorageInstance, userAccount, storageValue });
+        this.setState({ provider: customHttpProvider, simpleStorageInstance, userSigner, storageValue });
     }
 
     /**
@@ -76,15 +76,11 @@ class Main extends Component<{}, IMainState> {
      * submit input changes
      */
     public handleSubmitInputStorageValue = (event: React.FormEvent<HTMLFormElement>) => {
-        const { simpleStorageInstance, inputStorageValue, userAccount, provider } = this.state;
-
-        // A Signer from a private key
-        const privateKey = '0x0cf82bd6fc4a02b105b3091e50d0b81f3c59701cbb1d2484ef6e6a019271cc23';
-        const wallet = new ethers.Wallet(privateKey, provider);
+        const { simpleStorageInstance, inputStorageValue, userSigner } = this.state;
 
         // Create a new instance of the Contract with a Signer, which allows
         // update methods
-        const simpleStorageInstanceWithSigner = simpleStorageInstance.connect(wallet);
+        const simpleStorageInstanceWithSigner = simpleStorageInstance.connect(userSigner);
 
 
         simpleStorageInstanceWithSigner.set(inputStorageValue).then(async (tx: ContractTransaction) => {
