@@ -1,15 +1,16 @@
-import { fromConnection, fromInjected } from '@openzeppelin/network';
+import { ContractTransaction, ethers } from 'ethers';
+import { JsonRpcProvider } from 'ethers/providers';
 import React, { Component } from 'react';
-import truffleContract from 'truffle-contract';
-import SimpleStorageContract from '../../contracts/SimpleStorage.json';
+import SimpleStorageContractJSON from 'workspace-blockchain/build/contracts/SimpleStorage.json';
+import { SimpleStorageInstance } from 'workspace-blockchain/types/truffle-contracts/index';
 
 interface IMainState {
-    storageValue: number;
+    storageValue: string;
     inputStorageValue: string;
-    loggedIn: boolean;
-    web3: any;
-    accounts: string[];
-    contract: any;
+    userAccount: string;
+    provider: JsonRpcProvider;
+    simpleStorageInstance: ethers.Contract & SimpleStorageInstance;
+    miningTransaction: boolean;
 }
 /**
  * This is App.
@@ -22,20 +23,20 @@ class Main extends Component<{}, IMainState> {
         super(props);
         /**
          * @type {Object}
-         * @property {number} state.storageValue - this is the value stored
-         * @property {object} state.web3 - this is the web3 object
-         * @property {string[]} state.accounts - this is an array of accounts
-         * @property {object} state.contract - this is the contract object
-         * @property {object} state.inputStorageValue - variable to controled input
-         * @property {object} state.loggedIn - save user's state
+         * @property {string} state.storageValue - this is the value stored
+         * @property {JsonRpcProvider} state.provider - this is the web3 provider
+         * @property {string} state.userAccount - this is the user account
+         * @property {SimpleStorageInstance} state.simpleStorageInstance - this is the contract object
+         * @property {string} state.inputStorageValue - variable to controled input
+         * @property {boolean} state.miningTransaction - variable to mining message
          */
         this.state = {
-            accounts: undefined as any,
-            contract: undefined as any,
             inputStorageValue: '',
-            loggedIn: false,
-            storageValue: 0,
-            web3: undefined as any,
+            miningTransaction: false,
+            provider: undefined as any,
+            simpleStorageInstance: undefined as any,
+            storageValue: '',
+            userAccount: undefined as any,
         };
     }
 
@@ -43,74 +44,57 @@ class Main extends Component<{}, IMainState> {
      * @ignore
      */
     public async componentDidMount() {
-        const local = await fromConnection('http://127.0.0.1:8545');
+        const url = 'http://localhost:8545';
+        const customHttpProvider = new ethers.providers.JsonRpcProvider(url);
 
-        // Get the contract instance.
-        const Contract = truffleContract(SimpleStorageContract);
-        Contract.setProvider(local.lib.currentProvider);
-        const instance = await Contract.deployed();
+        // We connect to the Contract using a Provider, so we will only
+        // have read-only access to the Contract
+        const network = await customHttpProvider.getNetwork();
+        const simpleStorageInstance = new ethers.Contract(
+            // TODO: improve next line
+            (SimpleStorageContractJSON.networks as any)[network.chainId].address,
+            SimpleStorageContractJSON.abi,
+            customHttpProvider,
+        ) as ethers.Contract & SimpleStorageInstance;
 
-        const storageValue = (await instance.get()).toNumber();
+        const userAccount = (await customHttpProvider.listAccounts())[0];
+        const storageValue = (await simpleStorageInstance.get()).toString();
 
-        // Set web3, accounts, and contract to the state, and then proceed with an
+        // Set provider and contract to the state, and then proceed with an
         // example of interacting with the contract's methods.
-        this.setState({ web3: local.lib, contract: instance, storageValue });
+        this.setState({ provider: customHttpProvider, simpleStorageInstance, userAccount, storageValue });
     }
 
     /**
      * handle input changes.
      */
-    public handleChangeInputStorageValue = (event: any) => {
+    public handleChangeInputStorageValue = (event: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({ inputStorageValue: event.target.value });
     }
 
     /**
      * submit input changes
      */
-    public handleSubmitInputStorageValue = (event: any) => {
-        new Promise<
-            { loggedIn: boolean, accounts: string[], contract: any, web3: any }
-        >(async (resolve: any, reject: any) => {
-            let web3;
-            let { accounts, contract } = this.state;
-            const { loggedIn, inputStorageValue } = this.state;
+    public handleSubmitInputStorageValue = (event: React.FormEvent<HTMLFormElement>) => {
+        const { simpleStorageInstance, inputStorageValue, userAccount, provider } = this.state;
 
-            if (!loggedIn) {
-                try {
-                    const injected = await fromInjected();
-                    // Get network provider and web3 instance.
+        // A Signer from a private key
+        const privateKey = '0x0cf82bd6fc4a02b105b3091e50d0b81f3c59701cbb1d2484ef6e6a019271cc23';
+        const wallet = new ethers.Wallet(privateKey, provider);
 
-                    web3 = injected.lib;
-                    // Use web3 to get the user's accounts.
-                    accounts = await web3.eth.getAccounts();
+        // Create a new instance of the Contract with a Signer, which allows
+        // update methods
+        const simpleStorageInstanceWithSigner = simpleStorageInstance.connect(wallet);
 
-                    // Get the contract instance.
-                    const Contract = truffleContract(SimpleStorageContract);
-                    Contract.setProvider(web3.currentProvider);
-                    contract = await Contract.deployed();
-                } catch (error) {
-                    // Catch any errors for any of the above operations.
-                    console.log('Failed to load web3, accounts, or contract. Check console for details.');
-                    console.log(error);
-                }
-            }
-            // Stores a given value, 5 by default.
-            await contract.set(inputStorageValue, { from: accounts[0] });
-            //
-            resolve({ loggedIn, accounts, contract, web3 });
-        }).then(({ loggedIn, accounts, contract, web3 }) => {
-            // Update state with the result.
-            const { inputStorageValue } = this.state;
-            if (!loggedIn) {
-                this.setState({
-                    accounts,
-                    contract,
-                    inputStorageValue: '',
-                    loggedIn: true,
-                    storageValue: parseInt(inputStorageValue, 10),
-                    web3,
-                });
-            }
+
+        simpleStorageInstanceWithSigner.set(inputStorageValue).then(async (tx: ContractTransaction) => {
+            this.setState({ miningTransaction: true });
+            // The operation is NOT complete yet; we must wait until it is mined
+            await tx.wait();
+
+            // Call the Contract's getValue() method again
+            const newValue = (await simpleStorageInstance.get()).toString();
+            this.setState({ inputStorageValue: '', storageValue: newValue, miningTransaction: false });
         });
         event.preventDefault();
     }
@@ -119,8 +103,8 @@ class Main extends Component<{}, IMainState> {
      * @ignore
      */
     public render() {
-        const { web3, storageValue, inputStorageValue } = this.state;
-        if (!web3) {
+        const { provider, storageValue, inputStorageValue, miningTransaction } = this.state;
+        if (!provider) {
             return <div>Loading Web3, accounts, and contract...</div>;
         }
         return (
@@ -148,6 +132,7 @@ class Main extends Component<{}, IMainState> {
                     <input type="text" value={inputStorageValue} onChange={this.handleChangeInputStorageValue} />
                     <input type="submit" />
                 </form>
+                <div style={{visibility: miningTransaction ? 'visible' : 'hidden'}}>Mining...</div>
             </div>
         );
     }
