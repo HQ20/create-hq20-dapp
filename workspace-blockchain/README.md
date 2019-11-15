@@ -1,17 +1,12 @@
-# simple-ethereum-dapp
+# workspace-blockchain
 
-[![Build Status](https://travis-ci.com/HQ20/simple-ethereum-dapp.svg?branch=master)](https://travis-ci.com/HQ20/simple-ethereum-dapp)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=HQ20/simple-ethereum-dapp)](https://dependabot.com)
+:herb: This is the blockchain workspaces dapp :octocat: All you need in a nut:shell:
 
-:herb: This is the techhq simple ethereum dapp in a github template :octocat: All you need in a nut:shell:
-
-This template is based on a truffle project structure, having the **contracts**, **migrations** and **test** folder as usual, as well as the **truffle-config.js** file. Besides that, this template is packed with an example smart contract with an example of a test including coverage. It also contains linters for javascript and solidity, plus a script to run tests.
-
-This template also asumes the developer will use [travis](https://travis-ci.org/), [coveralls](https://coveralls.io/) and [dependabot](https://dependabot.com/).
+This template is based on a truffle project structure, having the **contracts**, **migrations** and **test** folder as usual, as well as the **truffle-config.js** file. Besides that, this template is packed with an example smart contract with examples of a test including coverage. It also contains linters for typescript and solidity, plus a script to run tests.
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com) to install dependencies.
+Use [yarn](https://yarnpkg.com) to install dependencies.
 
 ```bash
 $ npm install
