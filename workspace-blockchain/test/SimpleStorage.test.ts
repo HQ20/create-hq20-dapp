@@ -1,9 +1,9 @@
-import * as chai from 'chai';
+import { should } from 'chai';
 import { SimpleStorageInstance } from '../types/truffle-contracts';
 
 
 const SimpleStorage = artifacts.require('./SimpleStorage.sol') as Truffle.Contract<SimpleStorageInstance>;
-chai.should();
+should();
 
 /** @test {SimpleStorage} contract */
 contract('SimpleStorage', (accounts) => {
@@ -23,6 +23,3 @@ contract('SimpleStorage', (accounts) => {
         (storedData.toString()).should.be.equal('89');
     });
 });
-
-// you need it, better trust me!
-export {};

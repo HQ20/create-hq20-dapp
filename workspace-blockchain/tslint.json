@@ -1,7 +1,6 @@
 {
     "extends": [
-        "tslint:recommended",
-        "tslint-react"
+        "tslint:recommended"
     ],
     "rules": {
         "max-line-length": {
@@ -30,20 +29,10 @@
                 "trace"
             ]
         },
-        "jsx-wrap-multiline": false,
-        "quotemark": [true, "single", "jsx-double"]
+        "quotemark": [true, "single"]
     },
-    "jsRules": {
-        "max-line-length": {
-            "options": [
-                120
-            ]
-        }
-    },
+    "jsRules": {},
     "linterOptions": {
-        "exclude": [
-            "src/react-app-env.d.ts",
-            "src/serviceWorker.ts"
-        ]
+        "exclude": []
     }
 }
