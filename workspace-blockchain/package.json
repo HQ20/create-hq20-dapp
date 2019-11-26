@@ -58,6 +58,6 @@
         "ts-generator": "0.0.8",
         "ts-node": "8.5.2",
         "typescript": "3.7.2",
-        "@truffle/hdwallet-provider": "1.0.25"
+        "@truffle/hdwallet-provider": "1.0.26"
     }
 }
