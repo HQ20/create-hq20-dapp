@@ -9,7 +9,6 @@ update_configs:
     ignored_updates:
       - match:
           dependency_name: "jest"
-          dependency_name: "web3"
           dependency_name: "typescript"
           dependency_name: "react-scripts"
     automerged_updates:

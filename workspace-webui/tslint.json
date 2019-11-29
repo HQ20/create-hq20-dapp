@@ -33,13 +33,7 @@
         "jsx-wrap-multiline": false,
         "quotemark": [true, "single", "jsx-double"]
     },
-    "jsRules": {
-        "max-line-length": {
-            "options": [
-                120
-            ]
-        }
-    },
+    "jsRules": {},
     "linterOptions": {
         "exclude": [
             "src/react-app-env.d.ts",

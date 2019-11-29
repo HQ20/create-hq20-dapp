@@ -17,10 +17,10 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "preserve",
+        "jsx": "react",
         "typeRoots": [
             "./node_modules/@types",
-            "./types"
+            "../node_modules/@types"
         ],
         "types": [
             "node",
