@@ -12,6 +12,7 @@ update_configs:
           dependency_name: "web3"
           dependency_name: "typescript"
           dependency_name: "react-scripts"
+          dependency_name: "workspace-blockchain"
     automerged_updates:
       - match:
           dependency_type: "development"
