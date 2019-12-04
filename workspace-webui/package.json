@@ -26,7 +26,7 @@
         "react-router-dom": "5.1.2",
         "react-scripts": "3.2.0",
         "typescript": "3.7.3",
-        "workspace-blockchain": "0.0.1"
+        "workspace-blockchain": "file:../workspace-blockchain/"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.7.4",

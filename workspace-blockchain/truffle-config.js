@@ -19,9 +19,7 @@
  */
 
 // const fs = require('fs');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-// eslint-disable-next-line import/no-extraneous-dependencies
 require('ts-node/register');
 
 const infuraKey = 'fj4jll3k.....';
@@ -55,7 +53,7 @@ module.exports = {
         // this is necessary for coverage
         coverage: {
             host: 'localhost',
-            network_id: '*', // eslint-disable-line camelcase
+            network_id: '*',
             port: 8555,
             gas: 0xfffffffffff,
             gasPrice: 0x01,
