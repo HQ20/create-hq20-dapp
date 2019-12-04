@@ -18,7 +18,7 @@
         "test": "test"
     },
     "scripts": {
-        "deploy:ganache": "truffle deploy --network development",
+        "deploy:ganache:local": "truffle deploy --network development",
         "start:geth:local": "./scripts/local_geth.sh",
         "start:ganache:local": "./scripts/local_ganache.sh",
         "test": "scripts/test.sh",
