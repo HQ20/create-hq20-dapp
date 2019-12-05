@@ -10,7 +10,7 @@ contract('UpgradableStorage', (accounts) => {
 
     beforeEach(async () => {
         upgradableStorageInstance = await UpgradableStorage.new();
-        upgradableStorageInstance.setup(6);
+        await upgradableStorageInstance.setup(6);
     });
 
     /**
