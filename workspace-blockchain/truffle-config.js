@@ -75,6 +75,8 @@ module.exports = {
         // reporter: 'eth-gas-reporter',
     },
 
+    plugins: ['solidity-coverage'],
+
     // Configure your compilers
     compilers: {
         solc: {
