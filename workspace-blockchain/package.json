@@ -47,7 +47,7 @@
         "eth-gas-reporter": "0.2.14",
         "ethlint": "1.2.5",
         "ganache-cli": "6.7.0",
-        "soldoc": "0.1.2-beta.5",
+        "soldoc": "0.1.2-beta.6",
         "solidity-coverage": "0.7.0",
         "truffle-typings": "1.0.8",
         "typechain": "1.0.3",
