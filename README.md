@@ -1,10 +1,10 @@
-# ethereum-ts-react-dapp
+# starter kit
 
-[![Build Status](https://travis-ci.com/HQ20/ethereum-ts-react-dapp.svg?branch=master)](https://travis-ci.com/HQ20/ethereum-ts-react-dapp)
+[![Build Status](https://travis-ci.org/HQ20/starter-kit.svg?branch=master)](https://travis-ci.org/HQ20/starter-kit)
 
-This template is a monorepo using a **create-react-app** boilerplate with typescript, alongside with an [simple-ethereum-dapp](https://github.com/HQ20/simple-ethereum-dapp).
+This template is a monorepo using a **create-react-app** boilerplate with typescript, alongside with an ethereum example.
 
-The projects works as two lerna packages, which control tests, coverage and linting.
+The projects is currently controled with yarn workspaces, which control tests, coverage and linting.
 
 ## Installation
 
@@ -20,9 +20,9 @@ $ yarn
 
 You can run any command listed below, from this root folder project or, by entering each folder, you have some more specific README's and commands.
 
-* **"test"** run test in each project according to lerna
-* **"coverage"** run coverage in each project according to lerna
-* **"lint"** run lint in each project according to lerna
+* **yarn workspaces run test** run test in each workspace
+* **yarn workspaces run coverage** run coverage in each workspace
+* **yarn workspaces run lint** run lint in each workspace
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
