@@ -16,12 +16,13 @@ before_install:
     - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3
 
 install:
-    - yarn
+    - (cd workspace-blockchain && yarn)
+    - (cd workspace-ui && yarn)
 
 before_script:
     - (cd workspace-blockchain && yarn deploy:ganache:local)
 
 script:
-    - yarn workspaces run test:ci
-    - yarn workspaces run coverage:ci
-    - yarn workspaces run lint
+    - (cd workspace-blockchain && yarn test:ci)
+    - (cd workspace-blockchain && yarn coverage:ci)
+    - (cd workspace-blockchain && yarn lint:ci)
