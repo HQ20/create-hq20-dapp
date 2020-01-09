@@ -1,9 +1,15 @@
-dist: xenial
+dist: bionic
 
 language: node_js
 
 services:
     - docker
+    - redis
+
+cache:
+    yarn: true
+    directories:
+        - node_modules
 
 env:
     - DOCKER_COMPOSE_VERSION=1.4.2
