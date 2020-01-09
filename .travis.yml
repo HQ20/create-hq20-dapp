@@ -17,7 +17,7 @@ before_install:
 
 install:
     - (cd workspace-blockchain && yarn)
-    - (cd workspace-ui && yarn)
+    - (cd workspace-webui && yarn)
 
 before_script:
     - (cd workspace-blockchain && yarn deploy:ganache:local)
