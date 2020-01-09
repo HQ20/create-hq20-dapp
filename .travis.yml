@@ -25,4 +25,4 @@ before_script:
 script:
     - (cd workspace-blockchain && yarn test:ci)
     - (cd workspace-blockchain && yarn coverage:ci)
-    - (cd workspace-blockchain && yarn lint:ci)
+    - (cd workspace-blockchain && yarn lint)
