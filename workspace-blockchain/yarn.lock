@@ -9110,6 +9110,13 @@ type@^1.0.1:
   resolved "https://registry.yarnpkg.com/type/-/type-1.0.3.tgz#16f5d39f27a2d28d86e48f8981859e9d3296c179"
   integrity sha512-51IMtNfVcee8+9GJvj0spSuFcZHe9vSib6Xtgsny1Km9ugyz2mbS08I3rsUIRYgJohFRFU1160sgRodYz378Hg==
 
+typechain-target-truffle@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/typechain-target-truffle/-/typechain-target-truffle-1.0.2.tgz#52ecbd8b7a854960567ad223660d60fcb42eaa17"
+  integrity sha512-XF3Iq2IzR+Pqvx6fcKIKGXNEk3lEcY24vYv9VqoVPfPB6vUM09PRLJCeLm1/ag6Pr2PICKUA0f4Es+YTR3ESKA==
+  dependencies:
+    lodash "^4.17.15"
+
 typechain@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/typechain/-/typechain-1.0.3.tgz#c4465cdc27526989c735774ad96fadbb908bfe01"
