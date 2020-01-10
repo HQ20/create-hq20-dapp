@@ -1,4 +1,4 @@
-package io.techhq.myexample.contracts;
+package io.techhq.myapplication.contracts;
 
 import java.math.BigInteger;
 import java.util.Arrays;
