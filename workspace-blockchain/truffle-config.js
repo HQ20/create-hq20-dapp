@@ -90,4 +90,8 @@ module.exports = {
             },
         },
     },
+
+    ens: {
+        enabled: true
+    },
 };
