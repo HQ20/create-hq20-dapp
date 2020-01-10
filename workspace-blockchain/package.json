@@ -43,6 +43,7 @@
         "truffle": "5.1.7"
     },
     "devDependencies": {
+        "@codechecks/client": "0.1.10",
         "@truffle/hdwallet-provider": "1.0.28",
         "@types/bignumber.js": "5.0.0",
         "@types/chai": "4.2.7",
