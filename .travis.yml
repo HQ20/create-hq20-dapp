@@ -26,4 +26,5 @@ script:
     - (cd workspace-blockchain && yarn test:ci)
     - (cd workspace-blockchain && yarn coverage:ci)
     - (cd workspace-blockchain && yarn lint)
+    - (cd workspace-android && ./gradlew test)
     - (cd workspace-blockchain && npx codechecks)
