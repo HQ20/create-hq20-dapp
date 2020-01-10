@@ -1,30 +1,38 @@
 dist: xenial
 
-language: node_js
-
 services:
-    - docker
+  - docker
 
 env:
-    - DOCKER_COMPOSE_VERSION=1.4.2
+  - DOCKER_COMPOSE_VERSION=1.4.2
 
-node_js:
-    - "lts/dubnium"
+matrix:
+  include:
+    - language: java
+      jdk: openjdk8
+      before_install:
+        - docker pull trufflesuite/ganache-cli:v6.4.3
+        - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3
+      install:
+        - (cd workspace-android && ./gradlew assemble)
+      before_script:
+        - (cd workspace-blockchain && yarn deploy:ganache:local)
+      script:
+        - (cd workspace-android && ./gradlew test)
 
-before_install:
-    - docker pull trufflesuite/ganache-cli:v6.4.3
-    - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3
-
-install:
-    - (cd workspace-blockchain && yarn)
-    - (cd workspace-webui && yarn)
-
-before_script:
-    - (cd workspace-blockchain && yarn deploy:ganache:local)
-
-script:
-    - (cd workspace-blockchain && yarn test:ci)
-    - (cd workspace-blockchain && yarn coverage:ci)
-    - (cd workspace-blockchain && yarn lint)
-    - (cd workspace-android && ./gradlew test)
-    - (cd workspace-blockchain && npx codechecks)
+    - language: node_js
+      node_js:
+        - "lts/dubnium"
+      before_install:
+        - docker pull trufflesuite/ganache-cli:v6.4.3
+        - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3
+      install:
+        - (cd workspace-blockchain && yarn)
+        - (cd workspace-webui && yarn)
+      before_script:
+        - (cd workspace-blockchain && yarn deploy:ganache:local)
+      script:
+        - (cd workspace-blockchain && yarn test:ci)
+        - (cd workspace-blockchain && yarn coverage:ci)
+        - (cd workspace-blockchain && yarn lint)
+        - (cd workspace-blockchain && npx codechecks)
