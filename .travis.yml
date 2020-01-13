@@ -9,7 +9,7 @@ env:
 before_install:
   - docker pull trufflesuite/ganache-cli:v6.8.1
   - mkdir -p ./db_ganache
-  - docker run -d -p 8545:8545 -v "$PWD/db_ganache":/app/db_ganache trufflesuite/ganache-cli:v6.8.1 --mnemonic "width whip dream dress captain vessel mix drive oxygen broken soap bone" --db "db_ganache/"
+  - docker run -d -p 8545:8545 --name my_ganache -v "$PWD/db_ganache":/app/db_ganache trufflesuite/ganache-cli:v6.8.1 --mnemonic "width whip dream dress captain vessel mix drive oxygen broken soap bone" --db "db_ganache/"
 
 
 jobs:
@@ -22,6 +22,7 @@ jobs:
         - (cd workspace-blockchain && yarn)
       script:
         - (cd workspace-blockchain && yarn deploy:ganache:local)
+        - docker exec -it my_ganache ls -la db_ganache
     - stage: test
       language: android
       jdk: openjdk8
@@ -36,6 +37,7 @@ jobs:
       install:
         - (cd workspace-android && ./gradlew assemble)
       script:
+        - docker exec -it my_ganache ls -la db_ganache
         - (cd workspace-android && ./gradlew test --stacktrace)
     -
       language: node_js
