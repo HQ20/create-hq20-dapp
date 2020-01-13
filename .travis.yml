@@ -6,13 +6,36 @@ services:
 env:
   - DOCKER_COMPOSE_VERSION=1.4.2
 
-matrix:
+before_install:
+  - docker pull trufflesuite/ganache-cli:v6.4.3
+  - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3
+
+
+jobs:
   include:
-    - language: java
-      jdk: openjdk8
-      before_install:
-        - docker pull trufflesuite/ganache-cli:v6.4.3
-        - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3
+    - language: android
+      android:
+        components:
+          # Uncomment the lines below if you want to
+          # use the latest revision of Android SDK Tools
+          # - tools
+          # - platform-tools
+
+          # The BuildTools version used by your project
+          - build-tools-28.0.2
+
+          # The SDK version used to compile your project
+          - android-28
+
+          # Additional components
+          - extra-google-google_play_services
+          - extra-google-m2repository
+          - extra-android-m2repository
+
+          # Specify at least one system image,
+          # if you need to run emulator(s) during your tests
+          - sys-img-x86-android-28
+          - sys-img-armeabi-v7a-android-17
       install:
         - (cd workspace-android && ./gradlew assemble)
       before_script:
@@ -23,9 +46,6 @@ matrix:
     - language: node_js
       node_js:
         - "lts/dubnium"
-      before_install:
-        - docker pull trufflesuite/ganache-cli:v6.4.3
-        - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3
       install:
         - (cd workspace-blockchain && yarn)
         - (cd workspace-webui && yarn)
