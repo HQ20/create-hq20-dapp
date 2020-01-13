@@ -19,10 +19,10 @@ jobs:
       node_js:
         - "lts/dubnium"
       install:
-        - cd workspace-blockchain
-        - yarn
+        - (cd workspace-blockchain && yarn)
       script:
-        - yarn deploy:ganache:local
+        - (cd workspace-blockchain && yarn deploy:ganache:local)
+        - docker exec -it my_ganache ls -la db_ganache
     - stage: test
       language: android
       jdk: openjdk8
@@ -35,26 +35,24 @@ jobs:
           - 'android-sdk-license-.+'
           - 'google-gdk-license-.+'
       install:
-        - cd workspace-android
-        - ./gradlew assemble
+        - (cd workspace-android && ./gradlew assemble)
       script:
-        - ./gradlew test --stacktrace
+        - docker exec -it my_ganache ls -la db_ganache
+        - (cd workspace-android && ./gradlew test --stacktrace)
     -
       language: node_js
       node_js: "lts/dubnium"
       install:
-        - cd workspace-blockchain
-        - yarn
+        - (cd workspace-blockchain && yarn)
       script:
-        - yarn test:ci
-        - yarn coverage:ci
-        - yarn lint
-        - npx codechecks
+        - (cd workspace-blockchain && yarn test:ci)
+        - (cd workspace-blockchain && yarn coverage:ci)
+        - (cd workspace-blockchain && yarn lint)
+        - (cd workspace-blockchain && npx codechecks)
     -
       language: node_js
       node_js: "lts/dubnium"
       install:
-        - cd workspace-webui
-        - yarn
+        - (cd workspace-webui && yarn)
       script:
-        - yarn lint
+        - (cd workspace-webui && yarn lint)
