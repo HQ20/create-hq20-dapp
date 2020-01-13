@@ -1,23 +1,18 @@
 import { ethers } from 'ethers';
 import express from 'express';
-import redis from 'redis';
 import util from 'util';
 import bodyParser from 'body-parser';
 
 import SimpleStorageContractJSON from 'workspace-blockchain/build/contracts/SimpleStorage.json';
 import { SimpleStorageInstance } from 'workspace-blockchain/types/truffle-contracts/index';
+import sql from './db';
 
 
 // start express app
 const app = express();
 const port = 3001;
 
-// start redis
-const redisClient = redis.createClient();
-// promisify
-redisClient.get = util.promisify(redisClient.get) as any;
-redisClient.send_command = util.promisify(redisClient.send_command) as any;
-
+sql.query = util.promisify(sql.query) as any;
 // support /post
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
@@ -29,14 +24,40 @@ app.use((req, res, next) => {
     next();
 });
 
+async function addEventToCache(newValue: number, tx: string, sender: string) {
+    try {
+        return await sql.query(
+            "INSERT INTO setvalue(newvalue, tx, sender) VALUES($1, $2, $3)",
+            [newValue, tx, sender],
+        );
+    } catch (e) {
+        console.log("error: ", e);
+        return null;
+    }
+}
+
+async function getEventFromCache(sender: string) {
+    try {
+        return await sql.query(
+            {
+                text: "SELECT * FROM setvalue WHERE sender = $1",
+                values: [sender],
+            },
+        );
+    } catch (e) {
+        console.log("error: ", e);
+        return null;
+    }
+};
+
 app.post('/cache/reset/', async (req, res) => {
-    //
+    // TODO: !
     res.sendStatus(200);
 });
 
-app.get('/cache/', (req, res) => {
+app.get('/cache/:author', (req, res) => {
     //
-    res.sendStatus(200);
+    getEventFromCache(req.params.author).then((result) => res.send(result!.rows))
 });
 
 app.listen(port, async () => {
@@ -54,12 +75,13 @@ app.listen(port, async () => {
         customHttpProvider,
     ) as ethers.Contract & SimpleStorageInstance;
 
-    contract.on("SetValue", (newValue, event) => {
+    contract.on("SetValue", async (newValue, event) => {
         // Called when anyone changes the value
-        console.log(newValue);
-
-        // See Event Emitter below for all properties on Event
-        console.log(event.blockNumber);
+        addEventToCache(
+            newValue.toNumber(),
+            (await event.getTransaction()).hash,
+            (await event.getTransaction()).from,
+        );
     });
 
     console.log(`Example app listening on port ${port}!`);
