@@ -1,7 +1,5 @@
 dist: bionic
 
-language: node_js
-
 services:
     - docker
     - redis
@@ -12,22 +10,55 @@ cache:
         - node_modules
 
 env:
-    - DOCKER_COMPOSE_VERSION=1.4.2
-
-node_js:
-    - "lts/dubnium"
+  - DOCKER_COMPOSE_VERSION=1.4.2
 
 before_install:
-    - docker pull trufflesuite/ganache-cli:v6.4.3
-    - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3
+  - docker pull trufflesuite/ganache-cli:v6.8.1
+  - mkdir -p ./db_ganache
+  - docker run -d -p 8545:8545 --name my_ganache -v "$PWD/db_ganache":/app/db_ganache trufflesuite/ganache-cli:v6.8.1 --mnemonic "width whip dream dress captain vessel mix drive oxygen broken soap bone" --db "db_ganache/"
 
-install:
-    - yarn
 
-before_script:
-    - (cd workspace-blockchain && yarn deploy:ganache:local)
-
-script:
-    - yarn workspaces run test:ci
-    - yarn workspaces run coverage:ci
-    - yarn workspaces run lint
+jobs:
+  include:
+    - stage: "Deploy Contracts"
+      language: node_js
+      node_js:
+        - "lts/dubnium"
+      install:
+        - (cd workspace-blockchain && yarn)
+      script:
+        - (cd workspace-blockchain && yarn deploy:ganache:local)
+        - docker exec -it my_ganache ls -la db_ganache
+    - stage: test
+      language: android
+      jdk: openjdk8
+      android:
+        components:
+          - build-tools-29.0.2
+          - android-29
+        licenses:
+          - 'android-sdk-preview-license-52d11cd2'
+          - 'android-sdk-license-.+'
+          - 'google-gdk-license-.+'
+      install:
+        - (cd workspace-android && ./gradlew assemble)
+      script:
+        - docker exec -it my_ganache ls -la db_ganache
+        - (cd workspace-android && ./gradlew test --stacktrace)
+    -
+      language: node_js
+      node_js: "lts/dubnium"
+      install:
+        - (cd workspace-blockchain && yarn)
+      script:
+        - (cd workspace-blockchain && yarn test:ci)
+        - (cd workspace-blockchain && yarn coverage:ci)
+        - (cd workspace-blockchain && yarn lint)
+        - (cd workspace-blockchain && npx codechecks)
+    -
+      language: node_js
+      node_js: "lts/dubnium"
+      install:
+        - (cd workspace-webui && yarn)
+      script:
+        - (cd workspace-webui && yarn lint)
