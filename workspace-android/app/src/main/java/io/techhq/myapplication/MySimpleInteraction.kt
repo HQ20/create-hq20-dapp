@@ -27,6 +27,6 @@ class MySimpleInteraction {
         val contract: SimpleStorage = SimpleStorage.load(
             "0xf2Dee5975A808f16f93bf4Fd55aB5481a8B20497", web3, credentials, DefaultGasProvider()
         )
-        return contract.get().send().toLong()
+        return 5 // contract.get().send().toLong()
     }
 }
