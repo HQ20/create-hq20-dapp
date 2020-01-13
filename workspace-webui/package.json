@@ -29,7 +29,7 @@
         "workspace-blockchain": "file:../workspace-blockchain/"
     },
     "devDependencies": {
-        "@babel/preset-typescript": "^7.7.7",
+        "@babel/preset-typescript": "^7.8.0",
         "@types/enzyme": "3.10.4",
         "@types/enzyme-adapter-react-16": "1.0.5",
         "@types/jest": "24.0.25",
@@ -41,7 +41,7 @@
         "ts-jest": "24.3.0",
         "tslint": "5.20.1",
         "tslint-react": "4.1.0",
-        "typedoc": "0.15.7",
+        "typedoc": "0.16.2",
         "typescript": "3.7.4",
         "typescript-tslint-plugin": "0.5.5",
         "coveralls": "3.0.9"
