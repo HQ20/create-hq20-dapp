@@ -9,7 +9,7 @@ env:
 before_install:
   - docker pull trufflesuite/ganache-cli:v6.8.1
   - mkdir -p ./db_ganache
-  - docker run -p 8545:8545 -v "$PWD/db_ganache":/app/db_ganache trufflesuite/ganache-cli:v6.8.1 --mnemonic "width whip dream dress captain vessel mix drive oxygen broken soap bone" --db "db_ganache/"
+  - docker run -d -p 8545:8545 -v "$PWD/db_ganache":/app/db_ganache trufflesuite/ganache-cli:v6.8.1 --mnemonic "width whip dream dress captain vessel mix drive oxygen broken soap bone" --db "db_ganache/"
 
 
 jobs:
