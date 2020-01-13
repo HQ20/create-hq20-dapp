@@ -35,7 +35,7 @@ jobs:
       install:
         - (cd workspace-android && ./gradlew assemble)
       script:
-        - (cd workspace-android && ./gradlew test)
+        - (cd workspace-android && ./gradlew test --stacktrace)
     -
       language: node_js
       node_js: "lts/dubnium"
