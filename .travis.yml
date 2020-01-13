@@ -14,35 +14,36 @@ before_install:
 jobs:
   include:
     - stage: "Deploy Contracts"
-      - language: node_js
-        node_js: "lts/dubnium"
-        install:
-          - (cd workspace-blockchain && yarn)
-        script:
-          - (cd workspace-blockchain && yarn deploy:ganache:local)
+      language: node_js
+      node_js:
+        - "lts/dubnium"
+      install:
+        - (cd workspace-blockchain && yarn)
+      script:
+        - (cd workspace-blockchain && yarn deploy:ganache:local)
     - stage: test
-      - language: android
-        jdk: openjdk8
-        android:
-          components:
-            - build-tools-29.0.2
-            - android-29
-          licenses:
-            - 'android-sdk-preview-license-52d11cd2'
-            - 'android-sdk-license-.+'
-            - 'google-gdk-license-.+'
-        install:
-          - (cd workspace-android && ./gradlew assemble)
-        script:
-          - (cd workspace-android && ./gradlew test)
-
-      - language: node_js
-        node_js: "lts/dubnium"
-        install:
-          - (cd workspace-blockchain && yarn)
-          - (cd workspace-webui && yarn)
-        script:
-          - (cd workspace-blockchain && yarn test:ci)
-          - (cd workspace-blockchain && yarn coverage:ci)
-          - (cd workspace-blockchain && yarn lint)
-          - (cd workspace-blockchain && npx codechecks)
+      language: android
+      jdk: openjdk8
+      android:
+        components:
+          - build-tools-29.0.2
+          - android-29
+        licenses:
+          - 'android-sdk-preview-license-52d11cd2'
+          - 'android-sdk-license-.+'
+          - 'google-gdk-license-.+'
+      install:
+        - (cd workspace-android && ./gradlew assemble)
+      script:
+        - (cd workspace-android && ./gradlew test)
+    -
+      language: node_js
+      node_js: "lts/dubnium"
+      install:
+        - (cd workspace-blockchain && yarn)
+        - (cd workspace-webui && yarn)
+      script:
+        - (cd workspace-blockchain && yarn test:ci)
+        - (cd workspace-blockchain && yarn coverage:ci)
+        - (cd workspace-blockchain && yarn lint)
+        - (cd workspace-blockchain && npx codechecks)
