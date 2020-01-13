@@ -8,6 +8,7 @@ env:
 
 before_install:
   - docker pull trufflesuite/ganache-cli:v6.4.3
+  - mkdir -p ./db_ganache
   - docker run -d -p 8545:8545 trufflesuite/ganache-cli:v6.4.3 --db ./db_ganache --mnemonic "width whip dream dress captain vessel mix drive oxygen broken soap bone"
 
 
@@ -20,7 +21,7 @@ jobs:
       install:
         - (cd workspace-blockchain && yarn)
       script:
-        - (cd workspace-blockchain && mkdir db_ganache && yarn deploy:ganache:local)
+        - (cd workspace-blockchain && yarn deploy:ganache:local)
     - stage: test
       language: android
       jdk: openjdk8
