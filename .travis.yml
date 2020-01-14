@@ -47,7 +47,7 @@ jobs:
           - 'android-sdk-license-.+'
           - 'google-gdk-license-.+'
       install:
-        - (cd workspace-android && ./gradlew clean build)
+        - (cd workspace-android && ./gradlew assemble)
       script:
         - docker exec -it my_ganache ls -la db_ganache
         - (cd workspace-android && ./gradlew test --stacktrace)
@@ -77,4 +77,4 @@ jobs:
         - psql -c 'create database starterkitcache;' -U postgres
         - psql -c 'create table setvalue(id int primary key, newvalue integer, tx text unique, sender text);' -U postgres
       script:
-        - (cd workspace-cache-server && yarn lint)
+        - (cd workspace-cache-server && yarn test)

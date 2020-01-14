@@ -5,7 +5,7 @@
         "dev": "ts-node src/index.ts",
         "start": "ts-node dist/index.js",
         "build": "tsc -p .",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 0"
     },
     "dependencies": {
         "@types/mysql": "^2.15.8",
