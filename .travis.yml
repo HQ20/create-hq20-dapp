@@ -2,7 +2,7 @@ dist: bionic
 
 services:
     - docker
-    - redis
+    - postgresql
 
 cache:
     yarn: true
@@ -31,7 +31,7 @@ jobs:
         - docker exec -it my_ganache ls -la db_ganache
     - stage: test
       language: android
-      jdk: openjdk8
+      jdk: openjdk11
       android:
         components:
           - build-tools-29.0.2
@@ -62,3 +62,13 @@ jobs:
         - (cd workspace-webui && yarn)
       script:
         - (cd workspace-webui && yarn lint)
+    -
+      language: node_js
+      node_js: "lts/dubnium"
+      install:
+        - (cd workspace-cache-server && yarn)
+      before_script:
+        - psql -c 'create database starterkitcache;' -U postgres
+        - psql -c 'createtable setvalue(id integer auto increment primary key, newvalue integer, tx text unique, sender text);' -U postgres
+      script:
+        - (cd workspace-cache-server && yarn lint)
