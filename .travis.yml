@@ -31,7 +31,7 @@ jobs:
         - docker exec -it my_ganache ls -la db_ganache
     - stage: test
       language: android
-      jdk: oraclejdk8
+      jdk: openjdk10
       android:
         components:
           - build-tools-29.0.2
@@ -69,6 +69,6 @@ jobs:
         - (cd workspace-cache-server && yarn)
       before_script:
         - psql -c 'create database starterkitcache;' -U postgres
-        - psql -c 'create table setvalue(id integer auto increment primary key, newvalue integer, tx text unique, sender text);' -U postgres
+        - psql -c 'create table setvalue(id integer serial primary key, newvalue integer, tx text unique, sender text);' -U postgres
       script:
         - (cd workspace-cache-server && yarn lint)
