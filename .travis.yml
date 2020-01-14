@@ -34,14 +34,21 @@ jobs:
       jdk: openjdk10
       android:
         components:
+          - tools
+          - platform-tools
           - build-tools-29.0.2
           - android-29
+          - extra-android-m2repository
         licenses:
           - 'android-sdk-preview-license-52d11cd2'
           - 'android-sdk-license-.+'
           - 'google-gdk-license-.+'
+      before_install:
+        - touch $HOME/.android/repositories.cfg
+        - yes | sdkmanager "platforms;android-28"
+        - yes | sdkmanager "build-tools;28.0.3"
       install:
-        - (cd workspace-android && ./gradlew assemble)
+        - (cd workspace-android && ./gradlew clean build)
       script:
         - docker exec -it my_ganache ls -la db_ganache
         - (cd workspace-android && ./gradlew test --stacktrace)
@@ -69,6 +76,6 @@ jobs:
         - (cd workspace-cache-server && yarn)
       before_script:
         - psql -c 'create database starterkitcache;' -U postgres
-        - psql -c 'create table setvalue(id integer serial primary key, newvalue integer, tx text unique, sender text);' -U postgres
+        - psql -c 'create table setvalue(id int serial primary key, newvalue integer, tx text unique, sender text);' -U postgres
       script:
         - (cd workspace-cache-server && yarn lint)
