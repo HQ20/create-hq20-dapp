@@ -1,4 +1,4 @@
-dist: bionic
+dist: trusty
 
 services:
     - docker
@@ -19,6 +19,8 @@ before_install:
 
 
 jobs:
+  allow_failures:
+    - stage: test
   include:
     - stage: "Deploy Contracts"
       language: node_js
@@ -36,6 +38,7 @@ jobs:
         components:
           - tools
           - platform-tools
+          - tools
           - build-tools-29.0.2
           - android-29
           - extra-android-m2repository
@@ -43,10 +46,6 @@ jobs:
           - 'android-sdk-preview-license-52d11cd2'
           - 'android-sdk-license-.+'
           - 'google-gdk-license-.+'
-      before_install:
-        - touch $HOME/.android/repositories.cfg
-        - yes | sdkmanager "platforms;android-28"
-        - yes | sdkmanager "build-tools;28.0.3"
       install:
         - (cd workspace-android && ./gradlew clean build)
       script:
@@ -76,6 +75,6 @@ jobs:
         - (cd workspace-cache-server && yarn)
       before_script:
         - psql -c 'create database starterkitcache;' -U postgres
-        - psql -c 'create table setvalue(id int serial primary key, newvalue integer, tx text unique, sender text);' -U postgres
+        - psql -c 'create table setvalue(id int primary key, newvalue integer, tx text unique, sender text);' -U postgres
       script:
         - (cd workspace-cache-server && yarn lint)
