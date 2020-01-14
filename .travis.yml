@@ -1,7 +1,13 @@
 dist: xenial
 
 services:
-  - docker
+    - docker
+    - postgresql
+
+cache:
+    yarn: true
+    directories:
+        - node_modules
 
 env:
   - DOCKER_COMPOSE_VERSION=1.4.2
@@ -13,6 +19,8 @@ before_install:
 
 
 jobs:
+  allow_failures:
+    - stage: test
   include:
     - stage: "Deploy Contracts"
       language: node_js
@@ -25,11 +33,15 @@ jobs:
         - docker exec -it my_ganache ls -la db_ganache
     - stage: test
       language: android
-      jdk: openjdk8
+      jdk: openjdk10
       android:
         components:
+          - tools
+          - platform-tools
+          - tools
           - build-tools-29.0.2
           - android-29
+          - extra-android-m2repository
         licenses:
           - 'android-sdk-preview-license-52d11cd2'
           - 'android-sdk-license-.+'
@@ -56,3 +68,13 @@ jobs:
         - (cd workspace-webui && yarn)
       script:
         - (cd workspace-webui && yarn lint)
+    -
+      language: node_js
+      node_js: "lts/dubnium"
+      install:
+        - (cd workspace-cache-server && yarn)
+      before_script:
+        - psql -c 'create database starterkitcache;' -U postgres
+        - psql -c 'create table setvalue(id int primary key, newvalue integer, tx text unique, sender text);' -U postgres
+      script:
+        - (cd workspace-cache-server && yarn test)

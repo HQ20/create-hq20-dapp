@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es2017",
+        "module": "commonjs",
+        "strict": true,
+        "moduleResolution": "node",
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "outDir": "./dist",
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

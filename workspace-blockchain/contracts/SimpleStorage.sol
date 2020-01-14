@@ -12,6 +12,8 @@ contract SimpleStorage {
 
     uint256 private storedData;
 
+    event SetValue(uint256 newValue);
+
     /**
      * constructor method setting an initial value
      */
@@ -25,6 +27,7 @@ contract SimpleStorage {
      */
     function set(uint256 x) public {
         storedData = x;
+        emit SetValue(x);
     }
 
     /**
