@@ -1,31 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# workspace-webui
 
-## Available Scripts
+> :herb: This is the webui workspaces :octocat: All you need in a nut:shell:
 
-In the project directory, you can run:
+This template is a react webapp, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### `npm start`
+This basic example is written is typescript.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Use [yarn](https://yarnpkg.com) to install dependencies.
 
-### `npm test`
+```bash
+$ yarn
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+Before running this webapp, you must have deployed the contracts to some network.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### All available commands
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The package.json file contains a set of npm scripts to help on the development phase. Below is a short description for each
+* **"deploy:ganache:local"** deploy the contracts on development network
+* **"start:ganache:local"** start a ganache instance, which starts a db when first used
+* **"start:geth:local"** start a geth instance, which starts a db when first used
+* **"eject"** read below*
+* **"start"** runs the app in the development mode
+* **"build"** builds the app for production to the `build` folder
+* **"test"** run tests locally
+* **"test:ci"** run tests in CI system
+* **"coverage"** run coverage locally
+* **"coverage:ci"** run coverage in CI system
+* **"lint"** lint source and tests typecript code
+* **"docs"** generates documentation based in your comments on the source code
 
 ### `npm run eject`
 
@@ -37,8 +44,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[Apache-2.0](LICENSE)
