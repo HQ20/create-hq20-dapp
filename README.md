@@ -1,28 +1,37 @@
-# starter kit
+<div align="center">
+    <img width="300" src="tools-box.svg"><br/>
+    <small>Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></small>
+    <h1>starter-kit</h1>
+    <div>
+        <a
+            href="https://travis-ci.org/HQ20/starter-kit"><img
+                src="https://travis-ci.org/HQ20/starter-kit.svg?branch=master" /></a>&emsp;
+        <a
+            href="https://dependabot.com"><img
+                src="https://api.dependabot.com/badges/status?host=github&repo=HQ20/contracts" /></a>&emsp;
+    </div>
+</div>
 
-[![Build Status](https://travis-ci.org/HQ20/starter-kit.svg?branch=master)](https://travis-ci.org/HQ20/starter-kit)
-
-This template is a monorepo using a **create-react-app** boilerplate with typescript, alongside with an ethereum example.
-
-The projects is currently controled with yarn workspaces, which control tests, coverage and linting.
-
-## Installation
-
-Use the package manager [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com) to install dependencies.
-
-```bash
-$ npm install
-# or
-$ yarn
-```
+This template is a monorepo in which we have four workspaces. In the **workspace-blockchain** we have an example of a solidity smart contracts project. For each one of those workspaces we have the following:
+- **workspace-webui** using a *create-react-app* boilerplate with typescript and ethers.js connecting to a local network
+- **workspace-android** a basic android app with web3j connecting to a local network
+- **workspace-cache-server** a cache server built with express.js and postgresql database, lestening to and caching events.
 
 ## Usage
+The projects is devided in workspaces and each workspace as it's own dependency manager, with examples of tests, coverage and linters.
 
-You can run any command listed below, from this root folder project or, by entering each folder, you have some more specific README's and commands.
+To know how to procceed individually in each workspace, please readme the README in each one.
 
-* **yarn workspaces run test** run test in each workspace
-* **yarn workspaces run coverage** run coverage in each workspace
-* **yarn workspaces run lint** run lint in each workspace
+In order to put this project fully running, you must following the steps below
+1. Install dependencies in all workspaces
+2. Start a local network (See [workspace-blockchain README](workspace-blockchain/README.md) for examples)
+3. Start a postgresql database and create the required tables to cache the events (Please, read [workspace-cache-server README](workspace-cache-server/README.md))
+4. Deploy the contracts to the local network (again, see [workspace-blockchain README](workspace-blockchain/README.md))
+5. Start the cache-server
+6. Start the webui
+7. Start the android app
+
+This is a step-by-step on how to get all the workspaces working, but of course, you might not want to run the android app, so, no need to install the dependencies or that workspace. Or, you might not want to start the cache server, so you can ignore steps 3 and 5. That's up to you what to run. But whatever that is, it must be it the order shown above.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
