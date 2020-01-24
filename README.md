@@ -1,7 +1,13 @@
 <div align="center">
-    <img width="300" src="tools-box.svg"><br/>
-    <small>Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></small>
-    <h1>starter-kit</h1>
+    <div style="width:750px;height:300px;display:flex;margin:auto">
+        <img style="" width="300" src="tools-box.svg">&emsp;&emsp;&emsp;
+        <span style="line-height:300px;font-size:80px">starter-kit</span>
+    </div>
+</div>
+
+> A starter-kit in the format of a github template. Divided in four worskpaces from the basic setup for smart contracts development, a webui, cache server and an android app. This is great for every new project. Containing from tests, to coverage, documentation generators, linters, etc.
+
+<div align="center">
     <div>
         <a
             href="https://travis-ci.org/HQ20/starter-kit"><img
@@ -40,3 +46,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 [Apache-2.0](LICENSE)
+
+## Credits
+* Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
