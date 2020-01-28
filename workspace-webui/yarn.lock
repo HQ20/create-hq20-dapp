@@ -2390,12 +2390,12 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@24.9.1":
-  version "24.9.1"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.9.1.tgz#02baf9573c78f1b9974a5f36778b366aa77bd534"
-  integrity sha512-Fb38HkXSVA4L8fGKEZ6le5bB8r6MRWlOCZbVuWZcmOMSCd2wCYOwN1ibj8daIoV9naq7aaOZjrLCoCMptKU/4Q==
+"@types/jest@25.1.0":
+  version "25.1.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.1.0.tgz#b3955aa0be6057c65c0bfb11ac2ef1e078598d76"
+  integrity sha512-MYX8LpNQboef1NDZQTchM5poL8WITRVG/4/1XLK/Xsamjptsvgb8ELTRoXixBARi+a81mMT4n2hooqaydEOE9A==
   dependencies:
-    jest-diff "^24.3.0"
+    jest-diff "^25.1.0"
 
 "@types/json-schema@^7.0.3":
   version "7.0.3"
@@ -8134,7 +8134,7 @@ jest-config@^25.1.0:
     pretty-format "^25.1.0"
     realpath-native "^1.1.0"
 
-jest-diff@^24.3.0, jest-diff@^24.9.0:
+jest-diff@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-24.9.0.tgz#931b7d0d5778a1baf7452cb816e325e3724055da"
   integrity sha512-qMfrTs8AdJE2iqrTp0hzh7kTd2PQWrsFyj9tORoKmu32xjPjeE4NyjVRDz8ybYwqS2ik8N4hsIpiVTyFeo2lBQ==
@@ -14137,10 +14137,10 @@ truffle-provider@^0.1.12:
     truffle-interface-adapter "^0.2.5"
     web3 "1.2.1"
 
-truffle@5.1.9:
-  version "5.1.9"
-  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.1.9.tgz#457bfa71af8eb0098fa551e2591e53dbca0dbe29"
-  integrity sha512-iVEFOqeakcC6tZHDN0j8DU23uR0tM6hpgd1D33NRVNR98UrhnNA99Vy9+wiy9XEBXWycjgcBiRvMO9pWNg0aZg==
+truffle@5.1.10:
+  version "5.1.10"
+  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.1.10.tgz#6866c6f7b88507415eb2d29a9c6c2ab5eba6df2a"
+  integrity sha512-7dkBjNwabpNUp2LTSsXWUk5TMOfomX9F0mPLDEZgAgmfH3qWG5rBEUn/jw5t0LQfVx8NCG+GIN9FxqiUIEWrYQ==
   dependencies:
     app-module-path "^2.2.0"
     mocha "5.2.0"
@@ -15545,7 +15545,7 @@ worker-rpc@^0.1.0:
     "@openzeppelin/contracts-ethereum-package" "2.4.0"
     "@openzeppelin/upgrades" "2.6.0"
     cross-env "6.0.3"
-    truffle "5.1.9"
+    truffle "5.1.10"
 
 wrap-ansi@^2.0.0:
   version "2.1.0"
