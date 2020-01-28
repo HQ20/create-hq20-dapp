@@ -1,8 +1,5 @@
 <div align="center">
-    <div style="width:750px;height:300px;display:flex;margin:auto">
-        <img style="" width="300" src="tools-box.svg">&emsp;&emsp;&emsp;
-        <span style="line-height:300px;font-size:80px">starter-kit</span>
-    </div>
+    <img style="" width="768" src="title.webp">
 </div>
 
 > A starter-kit in the format of a github template. Divided in four worskpaces from the basic setup for smart contracts development, a webui, cache server and an android app. This is great for every new project. Containing from tests, to coverage, documentation generators, linters, etc.
