@@ -15,7 +15,7 @@
         "docs": "typedoc --out docs ./src"
     },
     "dependencies": {
-        "ethers": "4.0.43",
+        "ethers": "4.0.44",
         "react": "16.12.0",
         "react-dom": "16.12.0",
         "react-router-dom": "5.1.2",
