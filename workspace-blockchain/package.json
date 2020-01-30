@@ -46,7 +46,7 @@
         "@codechecks/client": "0.1.10",
         "@truffle/hdwallet-provider": "1.0.29",
         "@types/bignumber.js": "5.0.0",
-        "@types/chai": "4.2.7",
+        "@types/chai": "4.2.8",
         "@types/mocha": "5.2.7",
         "@types/node": "13.5.1",
         "bignumber.js": "9.0.0",
