@@ -14131,19 +14131,19 @@ truffle-provider@^0.1.12:
     truffle-interface-adapter "^0.2.5"
     web3 "1.2.1"
 
-truffle@5.1.9:
-  version "5.1.9"
-  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.1.9.tgz#457bfa71af8eb0098fa551e2591e53dbca0dbe29"
-  integrity sha512-iVEFOqeakcC6tZHDN0j8DU23uR0tM6hpgd1D33NRVNR98UrhnNA99Vy9+wiy9XEBXWycjgcBiRvMO9pWNg0aZg==
+truffle@5.1.10:
+  version "5.1.10"
+  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.1.10.tgz#6866c6f7b88507415eb2d29a9c6c2ab5eba6df2a"
+  integrity sha512-7dkBjNwabpNUp2LTSsXWUk5TMOfomX9F0mPLDEZgAgmfH3qWG5rBEUn/jw5t0LQfVx8NCG+GIN9FxqiUIEWrYQ==
   dependencies:
     app-module-path "^2.2.0"
     mocha "5.2.0"
     original-require "1.0.1"
 
-ts-jest@25.0.0:
-  version "25.0.0"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-25.0.0.tgz#d83b266e6ffda0c458a129951b3fe3567f8ce8df"
-  integrity sha512-F+hZg3j7XYOFpXJteXb4lnqy7vQzTmpTmX7AJT6pvSGeZejyXj1Lk0ArpnrEPOpv6Zu/NugHc5W7FINngC9WZQ==
+ts-jest@25.1.0:
+  version "25.1.0"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-25.1.0.tgz#06e776c4cce8a4da8eec4945f36a5823d0c0f9ba"
+  integrity sha512-1Lf576ulKhbxX5og+tG8udVg/5cgcMLPBxp1iCqbbf6VvUK4gEsgAtzMjl8u98izhLrzKMPB0LxCBKEZ5l19Hw==
   dependencies:
     bs-logger "0.x"
     buffer-from "1.x"
@@ -15538,7 +15538,7 @@ worker-rpc@^0.1.0:
     "@openzeppelin/contracts" "2.4.0"
     "@openzeppelin/contracts-ethereum-package" "2.4.0"
     "@openzeppelin/upgrades" "2.6.0"
-    truffle "5.1.9"
+    truffle "5.1.10"
 
 wrap-ansi@^2.0.0:
   version "2.1.0"
