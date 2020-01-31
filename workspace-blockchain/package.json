@@ -54,7 +54,7 @@
         "directory-tree": "2.2.4",
         "eth-gas-reporter": "0.2.14",
         "ethlint": "1.2.5",
-        "ganache-cli": "6.8.2",
+        "ganache-cli": "6.9.0",
         "highlight.js": "9.18.0",
         "markdown-it": "10.0.0",
         "markdown-it-emoji": "1.4.0",
