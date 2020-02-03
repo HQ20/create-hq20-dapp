@@ -26,15 +26,18 @@ The projects is devided in workspaces and each workspace as it's own dependency 
 To know how to procceed individually in each workspace, please readme the README in each one.
 
 In order to put this project fully running, you must following the steps below
-1. Install dependencies in all workspaces
+1. Install dependencies in workspace-blockchain
 2. Start a local network (See [workspace-blockchain README](workspace-blockchain/README.md) for examples)
 3. Start a postgresql database and create the required tables to cache the events (Please, read [workspace-cache-server README](workspace-cache-server/README.md))
 4. Deploy the contracts to the local network (again, see [workspace-blockchain README](workspace-blockchain/README.md))
-5. Start the cache-server
-6. Start the webui
-7. Start the android app
+5. Install dependencies in workspace-cache-server (only the first time)
+6. Start the cache-server
+7. Install dependencies in workspace-webui (only the first time)
+8. Start the webui
+9. Install dependencies in workspace-android (only the first time)
+10. Start the android app
 
-This is a step-by-step on how to get all the workspaces working, but of course, you might not want to run the android app, so, no need to install the dependencies or that workspace. Or, you might not want to start the cache server, so you can ignore steps 3 and 5. That's up to you what to run. But whatever that is, it must be it the order shown above.
+This is a step-by-step on how to get all the workspaces working, but of course, you might not want to run the android app, so, no need to install the dependencies on that workspace. Or, you might not want to start the cache server, so you can ignore steps 3, 5 and 6. That's up to you what to run. But whatever that is, it must be it the order shown above.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
