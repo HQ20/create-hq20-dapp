@@ -470,10 +470,10 @@
     path-browserify "^1.0.0"
     url "^0.11.0"
 
-"@openzeppelin/upgrades@2.6.0", "@openzeppelin/upgrades@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@openzeppelin/upgrades/-/upgrades-2.6.0.tgz#595fcd77fdcbe56b9ffba53b0c17c7983389fe7d"
-  integrity sha512-vqL3ny0Z2M023H5cLiAS4qY+bjFYqhkPvxpfvYtTeaB2Bt/UeRD2Qk8+VvCFpojYOr9OBHu3RJWrFDcvgPcVxA==
+"@openzeppelin/upgrades@2.7.0", "@openzeppelin/upgrades@^2.6.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@openzeppelin/upgrades/-/upgrades-2.7.0.tgz#ef8d6fb0ce90c793b5e53ec6ccee1023fddb437a"
+  integrity sha512-mf0Cy68sIFaqfdfkYYG31pA4btGhu3fWL6tbdEMm6escpR3+ME/b80p1sioU9OmWvEowQgUh8qNdFggCA79nDQ==
   dependencies:
     "@types/cbor" "^2.0.0"
     axios "^0.18.0"
