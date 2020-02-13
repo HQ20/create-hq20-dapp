@@ -3529,10 +3529,10 @@ eth-ens-namehash@2.0.8, eth-ens-namehash@^2.0.0:
     idna-uts46-hx "^2.3.1"
     js-sha3 "^0.5.7"
 
-eth-gas-reporter@0.2.14:
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/eth-gas-reporter/-/eth-gas-reporter-0.2.14.tgz#8a7e3b8c09f3fae3bbab2e8cc65d19a6b766b3cd"
-  integrity sha512-pHeBl0g/bAljt0g+N1tnc2SQV5eFUU9qcJpr+SDQ9ewZEiJAB27uj2jSEnyuwo+CNxvWsEd9r+6HdHg83CwJFg==
+eth-gas-reporter@0.2.15:
+  version "0.2.15"
+  resolved "https://registry.yarnpkg.com/eth-gas-reporter/-/eth-gas-reporter-0.2.15.tgz#663752ac05bad1054c3c54d6fa611865a6a75fc1"
+  integrity sha512-nia5IswXUX9XQvc9b3t/PeS+uZFGeq2thzPOot4uLbovpoQRFjxOpo1lz8gbKIfsdOsKYC7pCaTdcScio8bX3Q==
   dependencies:
     "@ethersproject/abi" "5.0.0-beta.142"
     cli-table3 "^0.5.0"
@@ -3547,7 +3547,7 @@ eth-gas-reporter@0.2.14:
     request "^2.88.0"
     request-promise-native "^1.0.5"
     sha1 "^1.1.1"
-    solidity-parser-antlr "0.4.7"
+    solidity-parser-diligence "^0.4.17"
     sync-request "^6.0.0"
 
 eth-json-rpc-infura@^3.1.0:
@@ -3941,25 +3941,10 @@ ethers@4.0.0-beta.3:
     uuid "2.0.1"
     xmlhttprequest "1.8.0"
 
-ethers@^4.0.0-beta.1:
+ethers@^4.0.0-beta.1, ethers@^4.0.20, ethers@^4.0.32, ethers@^4.0.40:
   version "4.0.44"
   resolved "https://registry.yarnpkg.com/ethers/-/ethers-4.0.44.tgz#f2608cbc0b4d099b7e10a01c0efc3a1037013b4e"
   integrity sha512-kCkMPkpYjBkxzqjcuYUfDY7VHDbf5EXnfRPUOazdqdf59SvXaT+w5lgauxLlk1UjxnAiNfeNS87rkIXnsTaM7Q==
-  dependencies:
-    aes-js "3.0.0"
-    bn.js "^4.4.0"
-    elliptic "6.5.2"
-    hash.js "1.1.3"
-    js-sha3 "0.5.7"
-    scrypt-js "2.0.4"
-    setimmediate "1.0.4"
-    uuid "2.0.1"
-    xmlhttprequest "1.8.0"
-
-ethers@^4.0.20, ethers@^4.0.32, ethers@^4.0.40:
-  version "4.0.40"
-  resolved "https://registry.yarnpkg.com/ethers/-/ethers-4.0.40.tgz#6e1963d10b5d336a13cd81b519c230cc17624653"
-  integrity sha512-MC9BtV7Hpq4dgFONEfanx9aU9GhhoWU270F+/wegHZXA7FR+2KXFdt36YIQYLmVY5ykUWswDxd+f9EVkIa7JOA==
   dependencies:
     aes-js "3.0.0"
     bn.js "^4.4.0"
@@ -8972,6 +8957,11 @@ solidity-parser-antlr@^0.4.11:
   version "0.4.11"
   resolved "https://registry.yarnpkg.com/solidity-parser-antlr/-/solidity-parser-antlr-0.4.11.tgz#af43e1f13b3b88309a875455f5d6e565b05ee5f1"
   integrity sha512-4jtxasNGmyC0midtjH/lTFPZYvTTUMy6agYcF+HoMnzW8+cqo3piFrINb4ZCzpPW+7tTVFCGa5ubP34zOzeuMg==
+
+solidity-parser-diligence@^0.4.17:
+  version "0.4.17"
+  resolved "https://registry.yarnpkg.com/solidity-parser-diligence/-/solidity-parser-diligence-0.4.17.tgz#4f4c427b17b9bb0a5540ed26e71c51cfdea10228"
+  integrity sha512-zEAwnzNytUVVPO+DqlYKQb2i+JiUq2OhQUlaGVYxxa4m2h9zcqQnKsQwmZRgsR7h1G2bc7YR56t5V55M9qlDzg==
 
 solium-plugin-security@0.1.1:
   version "0.1.1"
