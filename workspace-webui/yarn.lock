@@ -16032,10 +16032,10 @@ truffle-provider@^0.1.12:
     truffle-interface-adapter "^0.2.5"
     web3 "1.2.1"
 
-truffle@5.1.14:
-  version "5.1.14"
-  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.1.14.tgz#18dde420cd88d8214451d59d1cf554c83f54dcd4"
-  integrity sha512-6rIy335igwHOR0a8xEtPZdlCPBAvDcMIuVQVWAVtPqDy7xMTxGm4A0C4YRsEvZUc5V8GfCBfQb/GQ5AXlXI+6w==
+truffle@5.1.15:
+  version "5.1.15"
+  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.1.15.tgz#cf1efb8a601571eb20de13e95dbd8d27c574c0c3"
+  integrity sha512-sknMUERo+3bihwUEThxI4a8h+lJdumLSYGCObmqCNMxjNWCwfqlPkYaIl8z64PcN3Dus/Sr8aLEF8IHpHQWISA==
   dependencies:
     app-module-path "^2.2.0"
     mocha "5.2.0"
@@ -16279,10 +16279,10 @@ typescript@3.7.x:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.5.tgz#0692e21f65fd4108b9330238aac11dd2e177a1ae"
   integrity sha512-/P5lkRXkWHNAbcJIiHPfRoKqyd7bsyCma1hZNUGfn20qm64T6ZBlrzprymeu918H+mB/0rIg2gGK/BXkhhYgBw==
 
-typescript@3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.2.tgz#91d6868aaead7da74f493c553aeff76c0c0b1d5a"
-  integrity sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+typescript@3.8.3:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
+  integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
 
 typewise-core@^1.2, typewise-core@^1.2.0:
   version "1.2.0"
@@ -18041,7 +18041,7 @@ worker-rpc@^0.1.0:
     "@openzeppelin/contracts" "2.5.0"
     "@openzeppelin/contracts-ethereum-package" "2.4.0"
     "@openzeppelin/upgrades" "2.7.1"
-    truffle "5.1.14"
+    truffle "5.1.15"
 
 wrap-ansi@^2.0.0:
   version "2.1.0"
