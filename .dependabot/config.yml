@@ -13,11 +13,8 @@ update_configs:
           dependency_name: "react-scripts"
     automerged_updates:
       - match:
-          dependency_type: "development"
+          dependency_type: "all"
           update_type: "all"
-      - match:
-          dependency_type: "production"
-          update_type: "semver:patch"
 
   - package_manager: "javascript"
     directory: "/workspace-blockchain"
@@ -26,8 +23,5 @@ update_configs:
       - "obernardovieira"
     automerged_updates:
       - match:
-          dependency_type: "development"
+          dependency_type: "all"
           update_type: "all"
-      - match:
-          dependency_type: "production"
-          update_type: "semver:patch"
