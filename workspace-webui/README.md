@@ -21,9 +21,6 @@ Before running this webapp, you must have deployed the contracts to some network
 ### All available commands
 
 The package.json file contains a set of npm scripts to help on the development phase. Below is a short description for each
-* **"deploy:ganache:local"** deploy the contracts on development network
-* **"start:ganache:local"** start a ganache instance, which starts a db when first used
-* **"start:geth:local"** start a geth instance, which starts a db when first used
 * **"eject"** read below*
 * **"start"** runs the app in the development mode
 * **"build"** builds the app for production to the `build` folder

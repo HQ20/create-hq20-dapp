@@ -15,7 +15,8 @@
     </div>
 </div>
 
-This template is a monorepo in which we have four workspaces. In the **workspace-blockchain** we have an example of a solidity smart contracts project. For each one of those workspaces we have the following:
+This template is a monorepo in which we have four workspaces. For each one of those workspaces we have the following:
+- **workspace-blockchain** an example of a solidity smart contracts project
 - **workspace-webui** using a *create-react-app* boilerplate with typescript and ethers.js connecting to a local network
 - **workspace-android** a basic android app with web3j connecting to a local network
 - **workspace-cache-server** a cache server built with express.js and postgresql database, lestening to and caching events.
