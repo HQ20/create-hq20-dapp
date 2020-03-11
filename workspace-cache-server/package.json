@@ -16,7 +16,7 @@
         "workspace-blockchain": "file:../workspace-blockchain/"
     },
     "devDependencies": {
-        "@types/pg": "7.14.1",
+        "@types/pg": "7.14.2",
         "@types/express": "4.17.2",
         "@types/node": "13.1.6",
         "@types/redis": "2.8.14",
