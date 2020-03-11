@@ -3,7 +3,7 @@ version: 1
 update_configs:
   - package_manager: "javascript"
     directory: "/workspace-webui"
-    update_schedule: "daily"
+    update_schedule: "weekly"
     default_assignees:
       - "obernardovieira"
     ignored_updates:
@@ -18,7 +18,17 @@ update_configs:
 
   - package_manager: "javascript"
     directory: "/workspace-blockchain"
-    update_schedule: "daily"
+    update_schedule: "weekly"
+    default_assignees:
+      - "obernardovieira"
+    automerged_updates:
+      - match:
+          dependency_type: "all"
+          update_type: "all"
+
+  - package_manager: "javascript"
+    directory: "/workspace-cache-server"
+    update_schedule: "weekly"
     default_assignees:
       - "obernardovieira"
     automerged_updates:
