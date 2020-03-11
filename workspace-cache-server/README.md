@@ -22,6 +22,20 @@ $ yarn
 
 To keep everything simple, we recommend you to start  postgresql database, using [docker](https://www.docker.com/). If you already have, follow the instructions [here](https://hub.docker.com/_/postgres) to start a local postgresql database.
 
+It is as simple as
+```bash
+$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+```
+
+and connect to it with any postgres client (see [here](https://wiki.postgresql.org/wiki/PostgreSQL_Clients)) with the following configurations
+
+```bash
+Host: localhost
+Port: 5432
+Username: postgres
+Password: mysecretpassword
+```
+
 Before you start, you also need to create the tables. To do so, at the root of this project you can find a *start.sql* file. Depending on the client you are using, either run that file, or copy/paste and execute the commands. It will create the base database and the table. Without this, the cache will not work.
 
 Also, it is necessary to rename the file *.env.example* to *.env* and fill the values.
@@ -29,8 +43,8 @@ Also, it is necessary to rename the file *.env.example* to *.env* and fill the v
 ### All available commands
 
 The package.json file contains a set of npm scripts to help on the development phase. Below is a short description for each
-* **"dev"** starts the server in dev mode
-* **"start"** runs the compiled code
+* **"start"** starts the server in dev mode
+* **"serve"** runs the compiled code
 * **"build"** builds the source code, transforming typescript into optimized javascript
 * **"test"** runs tests
 
