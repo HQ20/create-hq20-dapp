@@ -38,7 +38,7 @@
         "ts-jest": "25.2.1",
         "tslint": "6.1.0",
         "tslint-react": "4.2.0",
-        "typedoc": "0.16.11",
+        "typedoc": "0.17.1",
         "typescript": "3.8.3",
         "typescript-tslint-plugin": "0.5.5",
         "coveralls": "3.0.9"
