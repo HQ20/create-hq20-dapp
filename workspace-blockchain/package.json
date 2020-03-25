@@ -52,7 +52,7 @@
         "bignumber.js": "9.0.0",
         "chai": "4.2.0",
         "directory-tree": "2.2.4",
-        "eth-gas-reporter": "0.2.15",
+        "eth-gas-reporter": "0.2.16",
         "ethlint": "1.2.5",
         "ganache-cli": "6.9.1",
         "highlight.js": "9.18.1",
