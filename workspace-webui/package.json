@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "ethers": "4.0.46",
-        "react": "16.13.0",
+        "react": "16.13.1",
         "react-dom": "16.13.0",
         "react-router-dom": "5.1.2",
         "workspace-blockchain": "file:../workspace-blockchain/"
