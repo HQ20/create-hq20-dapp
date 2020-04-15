@@ -41,7 +41,7 @@
         "@openzeppelin/upgrades": "2.8.0"
     },
     "devDependencies": {
-        "@openzeppelin/cli": "2.8.0",
+        "@openzeppelin/cli": "2.8.2",
         "truffle": "5.1.21",
         "@codechecks/client": "0.1.10",
         "@truffle/hdwallet-provider": "1.0.34",
