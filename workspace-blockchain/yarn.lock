@@ -6539,10 +6539,10 @@ pbkdf2@^3.0.3, pbkdf2@^3.0.9:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-pdf-from-html@0.1.2-beta.1:
-  version "0.1.2-beta.1"
-  resolved "https://registry.yarnpkg.com/pdf-from-html/-/pdf-from-html-0.1.2-beta.1.tgz#9a4de4b7de07ce45d87f728c969baae5baa93211"
-  integrity sha512-rjGKqeZT3DyW6xNphxBa34ykx7Sf8go72L3YG3bAYr1Kd+l/rGmhl86awscWca26ITMofwnOYTxiEki6D5vYmQ==
+pdf-from-html@0.1.2-beta.2:
+  version "0.1.2-beta.2"
+  resolved "https://registry.yarnpkg.com/pdf-from-html/-/pdf-from-html-0.1.2-beta.2.tgz#5a5b76959e1999ab04b0999422c40393515db751"
+  integrity sha512-8u4gzL8xvsLX/GrNv0WWWUFGc2UxQGiUORoi4G2qjAvTUsFxybcje6tuuJfZKubYdmTjTW838J+3rNq/DRgjig==
 
 pegjs@^0.10.0:
   version "0.10.0"
