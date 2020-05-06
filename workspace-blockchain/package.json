@@ -42,7 +42,7 @@
     },
     "devDependencies": {
         "@openzeppelin/cli": "2.8.2",
-        "truffle": "5.1.23",
+        "truffle": "5.1.24",
         "@codechecks/client": "0.1.10",
         "@truffle/hdwallet-provider": "1.0.34",
         "@types/bignumber.js": "5.0.0",
