@@ -1,12 +1,12 @@
 import { should } from 'chai';
 import { UpgradableStorageInstance } from '../types/truffle-contracts';
 
-const UpgradableStorage = artifacts.require('UpgradableStorage') as Truffle.Contract<UpgradableStorageInstance>;
+const UpgradableStorage: Truffle.Contract<UpgradableStorageInstance> = artifacts.require('UpgradableStorage');
 should();
 
 /** @test {UpgradableStorage} contract */
 contract('UpgradableStorage', (accounts) => {
-    let upgradableStorageInstance: any;
+    let upgradableStorageInstance: UpgradableStorageInstance;
 
     beforeEach(async () => {
         upgradableStorageInstance = await UpgradableStorage.new();
