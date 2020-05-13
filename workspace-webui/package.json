@@ -39,7 +39,7 @@
         "tslint": "6.1.2",
         "tslint-react": "5.0.0",
         "typedoc": "0.17.6",
-        "typescript": "3.8.3",
+        "typescript": "3.9.2",
         "typescript-tslint-plugin": "0.5.5",
         "coveralls": "3.1.0"
     },
