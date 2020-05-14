@@ -1,8 +1,8 @@
 import { ContractTransaction, ethers } from 'ethers';
 import { JsonRpcProvider } from 'ethers/providers';
 import React, { Component } from 'react';
-import SimpleStorageContractJSON from 'workspace-blockchain/build/contracts/SimpleStorage.json';
-import { SimpleStorageInstance } from 'workspace-blockchain/types/truffle-contracts/index';
+import SimpleStorageContractJSON from '../../helpers/contracts/SimpleStorage.json';
+import { SimpleStorageInstance } from '../../helpers/contracts/types/truffle-contracts/index';
 
 interface IMainState {
     storageValue: string;
