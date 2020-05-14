@@ -120,3 +120,5 @@ typings/
 
 # ignore types
 types/
+
+geth/
