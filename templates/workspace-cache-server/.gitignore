@@ -88,3 +88,6 @@ docs/
 
 # secret menmonic
 .secret
+
+# ignore build folder
+dist/

@@ -3,8 +3,8 @@ import express from 'express';
 import util from 'util';
 import bodyParser from 'body-parser';
 
-import SimpleStorageContractJSON from 'workspace-blockchain/build/contracts/SimpleStorage.json';
-import { SimpleStorageInstance } from 'workspace-blockchain/types/truffle-contracts/index';
+import SimpleStorageContractJSON from './contracts/SimpleStorage.json';
+import { SimpleStorageInstance } from './contracts/types/truffle-contracts/index';
 import sql from './db';
 
 
