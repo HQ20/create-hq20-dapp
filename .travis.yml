@@ -27,52 +27,33 @@ jobs:
       node_js:
         - "lts/dubnium"
       install:
-        - (cd workspace-blockchain && yarn)
+        - (cd template/smart-contracts && yarn)
       script:
-        - (cd workspace-blockchain && yarn deploy:ganache:local)
+        - (cd template/smart-contracts && yarn deploy:ganache:local)
     - stage: test
-      language: android
-      jdk: openjdk10
-      android:
-        components:
-          - tools
-          - platform-tools
-          - tools
-          - build-tools-29.0.2
-          - android-29
-          - extra-android-m2repository
-        licenses:
-          - 'android-sdk-preview-license-52d11cd2'
-          - 'android-sdk-license-.+'
-          - 'google-gdk-license-.+'
+      language: node_js
+      node_js: "lts/dubnium"
       install:
-        - (cd workspace-android && ./gradlew assemble)
+        - (cd template/smart-contracts && yarn)
       script:
-        - (cd workspace-android && ./gradlew test --stacktrace)
+        - (cd template/smart-contracts && yarn test:ci)
+        - (cd template/smart-contracts && yarn coverage:ci)
+        - (cd template/smart-contracts && yarn lint)
+        - (cd template/smart-contracts && npx codechecks)
     -
       language: node_js
       node_js: "lts/dubnium"
       install:
-        - (cd workspace-blockchain && yarn)
+        - (cd template/react-webui && yarn)
       script:
-        - (cd workspace-blockchain && yarn test:ci)
-        - (cd workspace-blockchain && yarn coverage:ci)
-        - (cd workspace-blockchain && yarn lint)
-        - (cd workspace-blockchain && npx codechecks)
+        - (cd template/react-webui && yarn lint)
     -
       language: node_js
       node_js: "lts/dubnium"
       install:
-        - (cd workspace-webui && yarn)
-      script:
-        - (cd workspace-webui && yarn lint)
-    -
-      language: node_js
-      node_js: "lts/dubnium"
-      install:
-        - (cd workspace-cache-server && yarn)
+        - (cd template/api && yarn)
       before_script:
         - psql -c 'create database starterkitcache;' -U postgres
         - psql -c 'create table setvalue(id int primary key, newvalue integer, tx text unique, sender text);' -U postgres
       script:
-        - (cd workspace-cache-server && yarn test)
+        - (cd template/api && yarn test)
