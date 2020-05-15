@@ -27,33 +27,33 @@ jobs:
       node_js:
         - "lts/dubnium"
       install:
-        - (cd template/smart-contracts && yarn)
+        - (cd templates/smart-contracts && yarn)
       script:
-        - (cd template/smart-contracts && yarn deploy:ganache:local)
+        - (cd templates/smart-contracts && yarn deploy:ganache:local)
     - stage: test
       language: node_js
       node_js: "lts/dubnium"
       install:
-        - (cd template/smart-contracts && yarn)
+        - (cd templates/smart-contracts && yarn)
       script:
-        - (cd template/smart-contracts && yarn test:ci)
-        - (cd template/smart-contracts && yarn coverage:ci)
-        - (cd template/smart-contracts && yarn lint)
-        - (cd template/smart-contracts && npx codechecks)
+        - (cd templates/smart-contracts && yarn test:ci)
+        - (cd templates/smart-contracts && yarn coverage:ci)
+        - (cd templates/smart-contracts && yarn lint)
+        - (cd templates/smart-contracts && npx codechecks)
     -
       language: node_js
       node_js: "lts/dubnium"
       install:
-        - (cd template/react-webui && yarn)
+        - (cd templates/react-webui && yarn)
       script:
-        - (cd template/react-webui && yarn lint)
+        - (cd templates/react-webui && yarn lint)
     -
       language: node_js
       node_js: "lts/dubnium"
       install:
-        - (cd template/api && yarn)
+        - (cd templates/api && yarn)
       before_script:
         - psql -c 'create database starterkitcache;' -U postgres
         - psql -c 'create table setvalue(id int primary key, newvalue integer, tx text unique, sender text);' -U postgres
       script:
-        - (cd template/api && yarn test)
+        - (cd templates/api && yarn test)
