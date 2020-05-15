@@ -2,7 +2,17 @@
 version: 1
 update_configs:
   - package_manager: "javascript"
-    directory: "/workspace-webui"
+    directory: "/"
+    update_schedule: "weekly"
+    default_assignees:
+      - "obernardovieira"
+    automerged_updates:
+      - match:
+          dependency_type: "all"
+          update_type: "all"
+
+  - package_manager: "javascript"
+    directory: "/templates/react-webui"
     update_schedule: "weekly"
     default_assignees:
       - "obernardovieira"
@@ -17,7 +27,7 @@ update_configs:
           update_type: "all"
 
   - package_manager: "javascript"
-    directory: "/workspace-blockchain"
+    directory: "/templates/smart-contracts"
     update_schedule: "weekly"
     default_assignees:
       - "obernardovieira"
@@ -27,7 +37,7 @@ update_configs:
           update_type: "all"
 
   - package_manager: "javascript"
-    directory: "/workspace-cache-server"
+    directory: "/templates/api"
     update_schedule: "weekly"
     default_assignees:
       - "obernardovieira"
