@@ -15,28 +15,75 @@
     </div>
 </div>
 
-This template is a monorepo in which we have four workspaces. For each one of those workspaces we have the following:
-- **workspace-blockchain** an example of a solidity smart contracts project
-- **workspace-webui** using a *create-react-app* boilerplate with typescript and ethers.js connecting to a local network
-- **workspace-android** a basic android app with web3j connecting to a local network
-- **workspace-cache-server** a cache server built with express.js and postgresql database, lestening to and caching events.
+## Quick Overview
+
+```sh
+npx create-react-solidity-app my-app
+cd my-app
+npm start
+```
+
+The following templates are available:
+- **smart-contracts** an example of a solidity smart contracts project
+- **react-webui** using a *create-react-app* boilerplate with typescript and ethers.js connecting to a local network
+- **api** an api with a cache server built with express.js and postgresql database, listening and caching events.
 
 ## Usage
-The projects is devided in workspaces and each workspace as it's own dependency manager, with examples of tests, coverage and linters.
 
-To know how to procceed individually in each workspace, please readme the README in each one.
+**You’ll need to have Node 8.16.0 or Node 10.16.0 or later version on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to switch Node versions between different projects.
 
-In order to put this project fully running, you must following the steps below
-1. Install dependencies in workspace-blockchain
-2. Start a local network (See [workspace-blockchain README](workspace-blockchain/README.md) for examples)
-3. Start a postgresql database and create the required tables to cache the events (Please, read [workspace-cache-server README](workspace-cache-server/README.md))
-4. Deploy the contracts to the local network (again, see [workspace-blockchain README](workspace-blockchain/README.md))
-5. Install dependencies in workspace-cache-server (only the first time)
-6. Start the cache-server
-7. Install dependencies in workspace-webui (only the first time)
-8. Start the webui
-9. Install dependencies in workspace-android (only the first time)
-10. Start the android app
+To create a new app, you may choose one of the following methods:
+
+### npx
+
+```sh
+npx create-react-solidity-app my-app
+```
+
+_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) is a package runner tool that comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
+
+### npm
+
+```sh
+npm init react-solidity-app my-app
+```
+
+_`npm init <initializer>` is available in npm 6+_
+
+### Yarn
+
+```sh
+yarn create react-solidity-app my-app
+```
+
+_[`yarn create <starter-kit-package>`](https://yarnpkg.com/lang/en/docs/cli/create/) is available in Yarn 0.25+_
+
+It will create a directory called `my-app` inside the current folder.<br>
+Inside that directory, it will generate the initial project structure and install the transitive dependencies:
+
+```
+my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── react-webui
+│   ├── (to complete)
+│   └── (to complete)
+├── smart-contracts
+│   └── (to complete)
+└── api
+    └── (to complete)
+```
+
+No configuration or complicated folder structures, only the files you need to build your app.<br>
+Once the installation is done, you can open your project folder:
+
+```sh
+cd my-app
+```
+
+Inside the newly created project, you can run some built-in commands:
 
 This is a step-by-step on how to get all the workspaces working, but of course, you might not want to run the android app, so, no need to install the dependencies on that workspace. Or, you might not want to start the cache server, so you can ignore steps 3, 5 and 6. That's up to you what to run. But whatever that is, it must be it the order shown above.
 
