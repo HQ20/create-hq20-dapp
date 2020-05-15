@@ -1,7 +1,9 @@
 import { ContractTransaction, ethers } from 'ethers';
 import { JsonRpcProvider } from 'ethers/providers';
 import React, { Component } from 'react';
-import SimpleStorageContractJSON from '../../helpers/contracts/SimpleStorage.json';
+
+import Network from '../../helpers/contracts/network.json';
+import SimpleStorageABI from '../../helpers/contracts/SimpleStorageABI.json';
 import { SimpleStorageInstance } from '../../helpers/contracts/types/truffle-contracts/index';
 
 interface IMainState {
@@ -52,8 +54,8 @@ class Main extends Component<{}, IMainState> {
         const network = await customHttpProvider.getNetwork();
         const simpleStorageInstance = new ethers.Contract(
             // TODO: improve next line
-            (SimpleStorageContractJSON.networks as any)[network.chainId].address,
-            SimpleStorageContractJSON.abi,
+            Network.goerli.SimpleStorage,
+            SimpleStorageABI,
             customHttpProvider,
         ) as ethers.Contract & SimpleStorageInstance;
 

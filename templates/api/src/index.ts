@@ -3,7 +3,8 @@ import express from 'express';
 import util from 'util';
 import bodyParser from 'body-parser';
 
-import SimpleStorageContractJSON from './contracts/SimpleStorage.json';
+import Network from './contracts/network.json';
+import SimpleStorageABI from './contracts/SimpleStorageABI.json';
 import { SimpleStorageInstance } from './contracts/types/truffle-contracts/index';
 import sql from './db';
 
@@ -70,8 +71,8 @@ app.listen(port, async () => {
     const network = await customHttpProvider.getNetwork();
     let contract = new ethers.Contract(
         // TODO: improve next line
-        (SimpleStorageContractJSON.networks as any)[network.chainId].address,
-        SimpleStorageContractJSON.abi,
+        Network.goerli.SimpleStorage,
+        SimpleStorageABI,
         customHttpProvider,
     ) as ethers.Contract & SimpleStorageInstance;
 
