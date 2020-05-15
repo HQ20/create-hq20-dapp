@@ -27,12 +27,15 @@ export function createProjectFodler(projectName: string) {
 export async function copyTemplates(projectName: string) {
     const folderPath = path.join(process.cwd(), projectName);
     return await pipeline(
-        got.stream(`https://codeload.github.com/${packageJSON.repository.name}/tar.gz/master`),
-        extract({ cwd: folderPath, strip: 2 }, [`starter-kit-master/templates`])
+        got.stream(`https://codeload.github.com/${packageJSON.repository.name}/tar.gz/release`),
+        extract({ cwd: folderPath, strip: 2 }, [`create-react-solidity-app-release/templates`])
     );
 }
 
 export async function installDependencies(projectName: string) {
-    const folderPath = path.join(process.cwd(), projectName, 'smart-contracts');
-    return await execa('yarnpkg', { cwd: folderPath })
+    return await Promise.all([
+        execa('yarnpkg', { cwd:  path.join(process.cwd(), projectName, 'api') }),
+        execa('yarnpkg', { cwd:  path.join(process.cwd(), projectName, 'react-webui') }),
+        execa('yarnpkg', { cwd:  path.join(process.cwd(), projectName, 'smart-contracts') }),
+    ]);
 }

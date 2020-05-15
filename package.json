@@ -1,5 +1,5 @@
 {
-    "name": "starter-kit",
+    "name": "create-react-solidity-app",
     "version": "0.0.0",
     "main": "dist/index.js",
     "files": [
@@ -12,17 +12,17 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
-        "name": "HQ20/starter-kit",
+        "name": "HQ20/create-react-solidity-app",
         "type": "git",
-        "url": "git+https://github.com/HQ20/starter-kit.git"
+        "url": "git+https://github.com/HQ20/create-react-solidity-app.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/HQ20/starter-kit/issues"
+        "url": "https://github.com/HQ20/create-react-solidity-app/issues"
     },
-    "homepage": "https://github.com/HQ20/starter-kit#readme",
+    "homepage": "https://github.com/HQ20/create-react-solidity-app#readme",
     "dependencies": {
         "execa": "4.0.1",
         "got": "11.1.3",

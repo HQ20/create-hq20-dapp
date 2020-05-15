@@ -2,13 +2,13 @@
     <img style="" width="768" src="title.webp">
 </div>
 
-> A starter-kit in the format of a github template. Divided in four worskpaces from the basic setup for smart contracts development, a webui, cache server and an android app. This is great for every new project. Containing from tests, to coverage, documentation generators, linters, etc.
+> Welcome to HQ20 create-react-solidity-app. With a couple of different templates from a basic setup for smart contracts development, a react webui and an api with cache server. This is great for every new project. Contains examples of tests, coverage, documentation generators, linters, etc.
 
 <div align="center">
     <div>
         <a
-            href="https://travis-ci.org/HQ20/starter-kit"><img
-                src="https://travis-ci.org/HQ20/starter-kit.svg?branch=master" /></a>&emsp;
+            href="https://travis-ci.org/HQ20/create-react-solidity-app"><img
+                src="https://travis-ci.org/HQ20/create-react-solidity-app.svg?branch=master" /></a>&emsp;
         <a
             href="https://dependabot.com"><img
                 src="https://api.dependabot.com/badges/status?host=github&repo=HQ20/contracts" /></a>&emsp;
