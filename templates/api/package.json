@@ -33,7 +33,7 @@
         "ts-node": "8.10.1",
         "typescript": "3.9.2",
         "truffle-typings": "1.0.8",
-        "typechain": "^1.0.0",
+        "typechain": "^2.0.0",
         "bignumber.js": "9.0.0"
     }
 }
