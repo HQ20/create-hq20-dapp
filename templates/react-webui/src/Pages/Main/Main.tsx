@@ -54,7 +54,7 @@ class Main extends Component<{}, IMainState> {
         const network = await customHttpProvider.getNetwork();
         const simpleStorageInstance = new ethers.Contract(
             // TODO: improve next line
-            Network.goerli.SimpleStorage,
+            Network.development.SimpleStorage,
             SimpleStorageABI,
             customHttpProvider,
         ) as ethers.Contract & SimpleStorageInstance;

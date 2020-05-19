@@ -1,5 +1,5 @@
 {
-    "goerli": {
-        "SimpleStorage": "0x0"
+    "development": {
+        "SimpleStorage": "0xf2Dee5975A808f16f93bf4Fd55aB5481a8B20497"
     }
 }

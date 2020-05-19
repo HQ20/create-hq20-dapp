@@ -71,7 +71,7 @@ app.listen(port, async () => {
     const network = await customHttpProvider.getNetwork();
     let contract = new ethers.Contract(
         // TODO: improve next line
-        Network.goerli.SimpleStorage,
+        Network.development.SimpleStorage,
         SimpleStorageABI,
         customHttpProvider,
     ) as ethers.Contract & SimpleStorageInstance;
