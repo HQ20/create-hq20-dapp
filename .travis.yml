@@ -1,4 +1,7 @@
+os: linux
 dist: xenial
+language: node_js
+node_js: lts/dubnium
 
 services:
   - docker
@@ -15,9 +18,6 @@ env:
 jobs:
   include:
     - stage: "Deploy Contracts"
-      language: node_js
-      node_js:
-        - "lts/dubnium"
       before_install:
         - cd templates/smart-contracts
       install:
@@ -29,8 +29,6 @@ jobs:
       script:
         - yarn deploy:ganache:local
     - stage: test
-      language: node_js
-      node_js: "lts/dubnium"
       before_install:
         - cd templates/smart-contracts
       install:
@@ -41,18 +39,14 @@ jobs:
         - yarn lint
         - npx codechecks
     -
-      language: node_js
-      node_js: "lts/dubnium"
       before_install:
         - cd templates/react-webui
       install:
         - yarn
       script:
-        - lsof -i :8545
+        - netstat -an --tcp --program
         - yarn test
     -
-      language: node_js
-      node_js: "lts/dubnium"
       before_install:
         - cd templates/api
       install:
