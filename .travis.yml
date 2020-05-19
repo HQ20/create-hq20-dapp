@@ -48,6 +48,7 @@ jobs:
       install:
         - yarn
       script:
+        - lsof -i :8545
         - yarn test
     -
       language: node_js
