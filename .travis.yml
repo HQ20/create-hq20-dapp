@@ -13,8 +13,6 @@ env:
   - DOCKER_COMPOSE_VERSION=1.4.2
 
 jobs:
-  allow_failures:
-    - stage: test
   include:
     - stage: "Deploy Contracts"
       language: node_js
