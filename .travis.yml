@@ -1,13 +1,13 @@
 dist: xenial
 
 services:
-    - docker
-    - postgresql
+  - docker
+  - postgresql
 
 cache:
-    yarn: true
-    directories:
-        - node_modules
+  yarn: true
+  directories:
+    - node_modules
 
 env:
   - DOCKER_COMPOSE_VERSION=1.4.2
@@ -26,34 +26,43 @@ jobs:
       language: node_js
       node_js:
         - "lts/dubnium"
+      before_install:
+        - cd templates/smart-contracts
       install:
-        - (cd templates/smart-contracts && yarn)
+        - yarn
       script:
-        - (cd templates/smart-contracts && yarn deploy:ganache:local)
+        - yarn deploy:ganache:local
     - stage: test
       language: node_js
       node_js: "lts/dubnium"
+      before_install:
+        - cd templates/smart-contracts
       install:
-        - (cd templates/smart-contracts && yarn)
+        - yarn
       script:
-        - (cd templates/smart-contracts && yarn test:ci)
-        - (cd templates/smart-contracts && yarn coverage:ci)
-        - (cd templates/smart-contracts && yarn lint)
-        - (cd templates/smart-contracts && npx codechecks)
+        - yarn test
+        - yarn coverage
+        - yarn lint
+        - npx codechecks
     -
       language: node_js
       node_js: "lts/dubnium"
+      before_install:
+        - cd templates/react-webui
       install:
-        - (cd templates/react-webui && yarn)
+        - yarn
       script:
-        - (cd templates/react-webui && yarn lint)
+        - yarn test
+        - yarn lint
     -
       language: node_js
       node_js: "lts/dubnium"
+      before_install:
+        - cd templates/api
       install:
-        - (cd templates/api && yarn)
+        - yarn
       before_script:
         - psql -c 'create database starterkitcache;' -U postgres
         - psql -c 'create table setvalue(id int primary key, newvalue integer, tx text unique, sender text);' -U postgres
       script:
-        - (cd templates/api && yarn test)
+        - yarn test
