@@ -51,7 +51,7 @@ class Main extends Component<{}, IMainState> {
 
         // We connect to the Contract using a Provider, so we will only
         // have read-only access to the Contract
-        const network = await customHttpProvider.getNetwork();
+        // const network = await customHttpProvider.getNetwork();
         const simpleStorageInstance = new ethers.Contract(
             // TODO: improve next line
             Network.development.SimpleStorage,
