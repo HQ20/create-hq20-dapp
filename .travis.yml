@@ -12,12 +12,6 @@ cache:
 env:
   - DOCKER_COMPOSE_VERSION=1.4.2
 
-before_install:
-  - docker pull trufflesuite/ganache-cli:v6.9.1
-  - mkdir -p ./db_ganache
-  - docker run -d -p 8545:8545 --name my_ganache -v "$PWD/db_ganache":/app/db_ganache trufflesuite/ganache-cli:v6.9.1 --mnemonic "width whip dream dress captain vessel mix drive oxygen broken soap bone" --db "db_ganache/"
-
-
 jobs:
   allow_failures:
     - stage: test
@@ -30,6 +24,10 @@ jobs:
         - cd templates/smart-contracts
       install:
         - yarn
+      before_script:
+        - docker pull trufflesuite/ganache-cli:v6.9.1
+        - mkdir -p ./db_ganache
+        - docker run -d -p 8545:8545 --name my_ganache -v "$PWD/db_ganache":/app/db_ganache trufflesuite/ganache-cli:v6.9.1 --mnemonic "width whip dream dress captain vessel mix drive oxygen broken soap bone" --db "db_ganache/"
       script:
         - yarn deploy:ganache:local
     - stage: test
