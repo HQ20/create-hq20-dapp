@@ -51,7 +51,6 @@ jobs:
         - yarn
       script:
         - yarn test
-        - yarn lint
     -
       language: node_js
       node_js: "lts/dubnium"
