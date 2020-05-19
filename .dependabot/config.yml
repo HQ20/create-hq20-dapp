@@ -19,8 +19,11 @@ update_configs:
     ignored_updates:
       - match:
           dependency_name: "jest"
+      - match:
           dependency_name: "eslint"
+      - match:
           dependency_name: "typescript"
+      - match:
           dependency_name: "react-scripts"
     automerged_updates:
       - match:
