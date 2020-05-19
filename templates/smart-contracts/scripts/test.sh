@@ -43,9 +43,9 @@ if [ "$SOLIDITY_COVERAGE" = true ]; then
     else
         npx truffle run coverage --file="$@" --solcoverjs ./.solcover.js --network development
     fi
-    if [ "$CI" = true ]; then
-        cat coverage/lcov.info | npx coveralls
-    fi
+    # if [ "$CI" = true ]; then
+    #     cat coverage/lcov.info | npx coveralls
+    # fi
 else
     if ganache_running; then
         echo "Using existing ganache instance"
