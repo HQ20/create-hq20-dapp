@@ -1,29 +1,16 @@
 const { defaults: tsjPreset } = require('ts-jest/presets');
 
 module.exports = {
-    // preset: 'ts-jest',
-    // moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-    // // roots: ['<rootDir>/src'],
-    // // transform: {
-    // //     ...tsjPreset.transform,
-    // //     // [...]
-    // // },
-    // // testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
-    // // collectCoverageFrom: [
-    // //     "src/**/*.{ts,tsx}",
-    // //     "!./node_modules/",
-    // //     "!src/App.tsx",
-    // //     "!src/*.{ts,tsx}",
-    // //     "!src/utils/**.ts"
-    // // ],
-    // moduleNameMapper: {
-    //     "helpers/(.*)$": [
-    //         "<rootDir>/src/helpers/$1",
-    //     ]
-    // }
-
     preset: 'ts-jest',
-    testEnvironment: 'node',
+    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+    transform: {
+        ...tsjPreset.transform,
+    },
+    collectCoverageFrom: [
+        "src/**/*.{ts,tsx}",
+        "!./node_modules/",
+        "!src/*.{ts,tsx}"
+    ],
     globals: {
         "ts-jest": {
             tsConfig: "tsconfig.json",
@@ -31,4 +18,7 @@ module.exports = {
         },
         NODE_ENV: "test"
     },
+    // moduleNameMapper: {
+    //     "helpers/(.*)$": "<rootDir>/src/helpers/$1",
+    // },
 }

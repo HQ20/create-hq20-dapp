@@ -7,7 +7,7 @@ import Main from '../Main';
 
 import { ethers } from 'ethers';
 import { JsonRpcProvider } from 'ethers/providers';
-import { SimpleStorageInstance } from 'helpers/contracts/types/truffle-contracts';
+import { SimpleStorageInstance } from 'helpers/contracts/types/truffle-contracts/index';
 
 
 configure({ adapter: new Adapter() });

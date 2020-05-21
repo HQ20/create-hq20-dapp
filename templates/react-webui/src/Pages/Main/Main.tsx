@@ -2,8 +2,10 @@ import { ContractTransaction, ethers } from 'ethers';
 import { JsonRpcProvider } from 'ethers/providers';
 import React, { Component } from 'react';
 
-import Network from 'helpers/contracts/network.json';
-import SimpleStorageABI from 'helpers/contracts/SimpleStorageABI.json';
+// TODO: temporary fix
+import Network from '../../helpers/contracts/network.json';
+// TODO: temporary fix
+import SimpleStorageABI from '../../helpers/contracts/SimpleStorageABI.json';
 import { SimpleStorageInstance } from 'helpers/contracts/types/truffle-contracts/index';
 
 interface IMainState {
