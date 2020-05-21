@@ -49,6 +49,3 @@ jobs:
         - psql -c 'create table setvalue(id int primary key, newvalue integer, tx text unique, sender text);' -U postgres
       script:
         - yarn test
-    - stage: "Final step"
-      script:
-        - echo 'Deploy'
