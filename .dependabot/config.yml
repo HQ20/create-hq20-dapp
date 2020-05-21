@@ -16,21 +16,11 @@ update_configs:
     update_schedule: "weekly"
     default_assignees:
       - "obernardovieira"
-    ignored_updates:
+    allowed_updates:
       - match:
-          dependency_name: "jest"
+          update_type: "security"
       - match:
-          dependency_name: "ts-jest"
-      - match:
-          dependency_name: "eslint"
-      - match:
-          dependency_name: "typescript"
-      - match:
-          dependency_name: "typedoc"
-    automerged_updates:
-      - match:
-          dependency_type: "all"
-          update_type: "all"
+          dependency_name: "react-scripts"
 
   - package_manager: "javascript"
     directory: "/templates/smart-contracts"

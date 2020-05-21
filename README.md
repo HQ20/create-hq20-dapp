@@ -71,6 +71,10 @@ Inside the newly created project, you can run some built-in commands:
 
 This is a step-by-step on how to get all the workspaces working, but of course, you might not want to run the android app, so, no need to install the dependencies on that workspace. Or, you might not want to start the cache server, so you can ignore steps 3, 5 and 6. That's up to you what to run. But whatever that is, it must be it the order shown above.
 
+## Repository updates
+
+This repository has automatic updates, thanks to [dependabot](https://dependabot.com), with an exception to **react-webui** template. We choose to only allow to update **react-scripts** and **security** issues, with no automatic merges because that template highly relies on [CRA](https://github.com/facebook/create-react-app).
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
