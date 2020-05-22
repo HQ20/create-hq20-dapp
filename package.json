@@ -1,12 +1,29 @@
 {
     "name": "create-hq20-dapp",
-    "version": "0.0.1-alpha.1",
+    "version": "0.0.0",
+    "description": "HQ20 dapp boilerplate.",
+    "license": "Apache-2.0",
+    "author": {
+        "name": "TechHQ",
+        "github": "hq20",
+        "email": "admin@techhq.io",
+        "url": "https://techhq.io"
+    },
+    "engines": {
+        "node": ">= 10.20.1",
+        "npm": ">= 6.14.0",
+        "yarn": ">= 1.22.0"
+    },
     "main": "dist/index.js",
+    "bin": {
+        "create-hq20-dapp": "dist/index.js"
+    },
     "files": [
-        "dist/*.js"
+        "/dist/*.js"
     ],
     "scripts": {
         "build": "tsc -p .",
+        "postbuild": "chmod u+x dist/index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -14,13 +31,11 @@
         "type": "git",
         "url": "git+https://github.com/HQ20/create-hq20-dapp.git"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
     "bugs": {
         "url": "https://github.com/HQ20/create-hq20-dapp/issues"
     },
     "homepage": "https://github.com/HQ20/create-hq20-dapp#readme",
+    "keywords": [],
     "dependencies": {
         "execa": "4.0.1",
         "got": "11.1.3",
