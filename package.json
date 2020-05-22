@@ -1,28 +1,26 @@
 {
-    "name": "create-dapp",
-    "version": "0.0.0",
+    "name": "create-hq20-dapp",
+    "version": "0.0.1-alpha.1",
     "main": "dist/index.js",
     "files": [
         "dist/*.js"
     ],
     "scripts": {
-        "try": "ts-node src/index.ts my-app",
-        "serve": "ts-node dist/index.js",
         "build": "tsc -p .",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
-        "name": "HQ20/create-dapp",
+        "name": "HQ20/create-hq20-dapp",
         "type": "git",
-        "url": "git+https://github.com/HQ20/create-dapp.git"
+        "url": "git+https://github.com/HQ20/create-hq20-dapp.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/HQ20/create-dapp/issues"
+        "url": "https://github.com/HQ20/create-hq20-dapp/issues"
     },
-    "homepage": "https://github.com/HQ20/create-dapp#readme",
+    "homepage": "https://github.com/HQ20/create-hq20-dapp#readme",
     "dependencies": {
         "execa": "4.0.1",
         "got": "11.1.3",

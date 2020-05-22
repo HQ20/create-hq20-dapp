@@ -1,6 +1,6 @@
 # workspace-blockchain
 
-> :herb: This is the blockchain workspaces dapp :octocat: All you need in a nut:shell:
+> :herb: This is the blockchain workspaces hq20-dapp :octocat: All you need in a nut:shell:
 
 This template is based on a truffle project structure, having the **contracts**, **migrations** and **test** folder as usual, as well as the **truffle-config.js** file. Besides that, this template is packed with an example smart contract with examples of a test including coverage. It also contains linters for typescript and solidity, plus a script to run tests.
 

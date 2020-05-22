@@ -12,10 +12,10 @@ import {
 
 const cli = meow(`
     Usage
-      $ yarn create dapp <project-name>
+      $ yarn create hq20-dapp <project-name>
 
     🌈 Examples 🌈
-      $ yarn create dapp my-app
+      $ yarn create hq20-dapp my-app
 `);
 
 
