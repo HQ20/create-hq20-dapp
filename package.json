@@ -1,5 +1,5 @@
 {
-    "name": "create-react-solidity-app",
+    "name": "create-dapp",
     "version": "0.0.0",
     "main": "dist/index.js",
     "files": [
@@ -12,17 +12,17 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
-        "name": "HQ20/create-react-solidity-app",
+        "name": "HQ20/create-dapp",
         "type": "git",
-        "url": "git+https://github.com/HQ20/create-react-solidity-app.git"
+        "url": "git+https://github.com/HQ20/create-dapp.git"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/HQ20/create-react-solidity-app/issues"
+        "url": "https://github.com/HQ20/create-dapp/issues"
     },
-    "homepage": "https://github.com/HQ20/create-react-solidity-app#readme",
+    "homepage": "https://github.com/HQ20/create-dapp#readme",
     "dependencies": {
         "execa": "4.0.1",
         "got": "11.1.3",

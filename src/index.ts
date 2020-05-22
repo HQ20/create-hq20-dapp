@@ -12,10 +12,10 @@ import {
 
 const cli = meow(`
     Usage
-      $ yarn create react-solidity-app <project-name>
+      $ yarn create dapp <project-name>
 
     🌈 Examples 🌈
-      $ yarn create react-solidity-app my-app
+      $ yarn create dapp my-app
 `);
 
 

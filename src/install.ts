@@ -28,7 +28,7 @@ export async function copyTemplates(projectName: string) {
     const folderPath = path.join(process.cwd(), projectName);
     return await pipeline(
         got.stream(`https://codeload.github.com/${packageJSON.repository.name}/tar.gz/release`),
-        extract({ cwd: folderPath, strip: 2 }, [`create-react-solidity-app-release/templates`])
+        extract({ cwd: folderPath, strip: 2 }, [`create-dapp-release/templates`])
     );
 }
 

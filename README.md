@@ -2,13 +2,13 @@
     <img style="" width="768" src="title.webp">
 </div>
 
-> Welcome to HQ20 create-react-solidity-app. With a couple of different templates from a basic setup for smart contracts development, a react webui and an api with cache server. This is great for every new project. Contains examples of tests, coverage, documentation generators, linters, etc.
+> Welcome to HQ20 create-dapp. With a couple of different templates from a basic setup for smart contracts development, a react webui and an api with cache server. This is great for every new project. Contains examples of tests, coverage, documentation generators, linters, etc.
 
 <div align="center">
     <div>
         <a
-            href="https://travis-ci.org/HQ20/create-react-solidity-app"><img
-                src="https://travis-ci.org/HQ20/create-react-solidity-app.svg?branch=master" /></a>&emsp;
+            href="https://travis-ci.org/HQ20/create-dapp"><img
+                src="https://travis-ci.org/HQ20/create-dapp.svg?branch=master" /></a>&emsp;
         <a
             href="https://dependabot.com"><img
                 src="https://api.dependabot.com/badges/status?host=github&repo=HQ20/contracts" /></a>&emsp;
@@ -18,7 +18,7 @@
 ## Quick Overview
 
 ```sh
-npx create-react-solidity-app my-app
+npx create-dapp my-app
 cd my-app
 npm start
 ```
@@ -37,7 +37,7 @@ To create a new app:
 ### Yarn
 
 ```sh
-yarn create react-solidity-app my-app
+yarn create dapp my-app
 ```
 
 _[`yarn create <starter-kit-package>`](https://yarnpkg.com/lang/en/docs/cli/create/) is available in Yarn 0.25+_
