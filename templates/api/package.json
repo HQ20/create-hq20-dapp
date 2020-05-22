@@ -1,6 +1,19 @@
 {
-    "name": "workspace-cache-server",
+    "name": "api",
     "version": "0.0.1",
+    "description": "API fraction of HQ20 dapp boilerplate.",
+    "license": "Apache-2.0",
+    "author": {
+        "name": "TechHQ",
+        "github": "hq20",
+        "email": "admin@techhq.io",
+        "url": "https://techhq.io"
+    },
+    "engines": {
+        "node": ">= 10.20.1",
+        "npm": ">= 6.14.0",
+        "yarn": ">= 1.15.2"
+    },
     "scripts": {
         "start": "ts-node src/index.ts",
         "serve": "node dist/index.js",

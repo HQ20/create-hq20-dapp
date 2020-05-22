@@ -1,18 +1,18 @@
 {
-    "name": "workspace-blockchain",
+    "name": "smart-contracts",
     "version": "0.0.1",
-    "description": "Ethereum related app",
+    "description": "Solidity smart-contracts fraction of HQ20 dapp boilerplate.",
     "license": "Apache-2.0",
     "author": {
-        "name": "Bernardo Vieira",
-        "github": "obernardovieira",
-        "email": "bernardo@techhq.io",
+        "name": "TechHQ",
+        "github": "hq20",
+        "email": "admin@techhq.io",
         "url": "https://techhq.io"
     },
     "engines": {
-        "node": ">= 10.12.0",
-        "npm": ">= 6.4.0",
-        "yarn": ">= 1.10.0"
+        "node": ">= 10.20.1",
+        "npm": ">= 6.14.0",
+        "yarn": ">= 1.15.2"
     },
     "files": [
         "contracts",
