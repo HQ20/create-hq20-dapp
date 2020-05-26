@@ -26,7 +26,7 @@ export function createProjectFodler(projectName: string) {
 export async function copyTemplates(projectName: string) {
     const folderPath = path.join(process.cwd(), projectName);
     return await pipeline(
-        got.stream(`https://codeload.github.com/create-hq20-dapp/tar.gz/release`),
+        got.stream(`https://codeload.github.com/hq20/create-hq20-dapp/tar.gz/release`),
         extract({ cwd: folderPath, strip: 2 }, [`create-hq20-dapp-release/templates`])
     );
 }
