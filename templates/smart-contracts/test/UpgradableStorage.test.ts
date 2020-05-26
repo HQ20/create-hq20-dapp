@@ -1,7 +1,7 @@
 import { should } from 'chai';
 import { UpgradableStorageInstance } from '../types/truffle-contracts';
 
-const UpgradableStorage: Truffle.Contract<UpgradableStorageInstance> = artifacts.require('UpgradableStorage');
+const UpgradableStorage = artifacts.require('UpgradableStorage');
 should();
 
 /** @test {UpgradableStorage} contract */

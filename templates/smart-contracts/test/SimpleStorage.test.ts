@@ -1,8 +1,7 @@
 import { should } from 'chai';
-import { SimpleStorageInstance } from '../types/truffle-contracts';
 
 
-const SimpleStorage: Truffle.Contract<SimpleStorageInstance> = artifacts.require('./SimpleStorage.sol');
+const SimpleStorage = artifacts.require('SimpleStorage');
 should();
 
 /** @test {SimpleStorage} contract */
