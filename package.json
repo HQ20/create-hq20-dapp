@@ -47,7 +47,7 @@
     "devDependencies": {
         "@types/listr": "0.14.2",
         "@types/mkdirp": "1.0.0",
-        "@types/node": "14.0.1",
+        "@types/node": "14.0.5",
         "@types/tar": "4.0.3",
         "ts-node": "8.10.1",
         "typescript": "3.9.2"
