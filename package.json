@@ -37,7 +37,7 @@
     "homepage": "https://github.com/HQ20/create-hq20-dapp#readme",
     "keywords": [],
     "dependencies": {
-        "execa": "4.0.1",
+        "execa": "4.0.2",
         "got": "11.1.3",
         "listr": "0.14.3",
         "meow": "7.0.1",
