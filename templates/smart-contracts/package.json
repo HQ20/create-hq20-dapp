@@ -74,7 +74,7 @@
         "truffle-typings": "1.0.8",
         "typechain": "^1.0.0",
         "typechain-target-truffle": "1.0.2",
-        "typescript": "3.9.3"
+        "typescript": "3.9.5"
     },
     "resolutions": {
         "set-value": "^2.0.1",
