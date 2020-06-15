@@ -47,7 +47,7 @@
         "@types/bignumber.js": "5.0.0",
         "@types/chai": "4.2.11",
         "@types/mocha": "7.0.2",
-        "@types/node": "14.0.9",
+        "@types/node": "14.0.13",
         "@typescript-eslint/eslint-plugin": "3.2.0",
         "@typescript-eslint/parser": "3.2.0",
         "bignumber.js": "9.0.0",
