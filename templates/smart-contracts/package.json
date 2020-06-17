@@ -58,7 +58,7 @@
         "ethlint": "1.2.5",
         "solium": "^1.0.0",
         "ganache-cli": "6.9.1",
-        "highlight.js": "10.0.3",
+        "highlight.js": "10.1.1",
         "markdown-it": "^10.0.0",
         "markdown-it-emoji": "1.4.0",
         "meow": "7.0.1",
