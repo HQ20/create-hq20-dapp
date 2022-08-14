@@ -36,7 +36,7 @@
         "generate-ts": "truffle compile && typechain --target truffle --outDir types/truffle-contracts './build/contracts/*.json'"
     },
     "dependencies": {
-        "@openzeppelin/contracts": "3.0.2",
+        "@openzeppelin/contracts": "4.7.2",
         "@openzeppelin/contracts-ethereum-package": "3.0.0",
         "@openzeppelin/upgrades": "2.8.0"
     },
